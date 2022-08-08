@@ -19,14 +19,7 @@ export default function Home() {
         <div className="Project-logo">
           <h1 className="crb-logo">
             <TypeAnimation
-              sequence={["CARBON FOOTPRINT EMISSION", 6000, ""]}
-              speed={45}
-              repeat={Infinity}
-            />
-          </h1>
-          <h1 className="crb-logo-1">
-            <TypeAnimation
-              sequence={["CALCULATION/CALCULATOR", 6000, ""]}
+              sequence={["CARBON FOOTPRINT EMISSION CALCULATOR", 6000, ""]}
               speed={45}
               repeat={Infinity}
             />
