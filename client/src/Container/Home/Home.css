@@ -1,6 +1,18 @@
 .HomeContainer {
-  background-color: #030f18;
-  height: 100vh;
+  background-image: url("./calculate.jpg");
+  width: 100vw;
+  height: 780px;
+  background-size: cover;
+  background-position: center;
+}
+.HomeContainer::after{
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.Team{
+  position: fixed;
+  width: 100%;
 }
 h1 {
   font-family: "Rubik", sans-serif;
@@ -15,6 +27,7 @@ p{
   display: flex;
   flex-direction: column;
   height: 250px;
+  padding-top: 80px;
 }
 .Title {
   width: 100%;
@@ -30,6 +43,10 @@ p{
   color: #e78309;
 }
 .india {
+  
+  color: #ffffff;
+}
+.hack{
   color: #01a33a;
 }
 .crb-logo {

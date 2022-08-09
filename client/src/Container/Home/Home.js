@@ -12,7 +12,7 @@ export default function Home() {
         <div className="Title">
           <h1 className="Title-logo">
             <span className="smart">SMART</span>
-            <span className="india"> INDIA </span>HACKATHON{" "}
+            <span className="india"> INDIA </span><span className="hack">HACKATHON</span>
             <span className="year">2022</span>
           </h1>
         </div>
