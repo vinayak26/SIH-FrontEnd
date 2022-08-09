@@ -1,7 +1,7 @@
 .Calculate-Container {
   background-color: #030f18;
   width: 100vw;
-  height: 100vh;
+  height: 780px;
 }
 .calculate-title h1 {
   font-family: "Rubik-semibold", sans-serif;
@@ -31,4 +31,8 @@ width: 50%;
 }
 .text{
     padding: 5px;
+}
+
+body{
+  color: #ffffff;
 }
