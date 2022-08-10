@@ -13,12 +13,13 @@ export default function Home() {
           <h1 className="Title-logo">
             <span className="smart">SMART</span>
             <span className="india"> INDIA </span><span className="hack">HACKATHON</span>
-            <span className="year">2022</span>
+            <span className="year"> 2022</span>
           </h1>
         </div>
         <div className="Project-logo">
           <h1 className="crb-logo">
             <TypeAnimation
+            className="crb-logo"
               sequence={["CARBON FOOTPRINT EMISSION CALCULATOR", 6000, ""]}
               speed={45}
               repeat={Infinity}

@@ -49,9 +49,10 @@ p{
 .hack{
   color: #01a33a;
 }
-.crb-logo {
+.crb-logo{
   text-align: center;
   margin: 30px 0;
+  /* color: #030f18; */
 }
 
 .text-container {
