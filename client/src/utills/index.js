@@ -153,7 +153,6 @@ const models = [
     "OUTLANDERWD",
     "JUKE",
     "CHEROKEE TRAILHAWK 4X4",
-
     "OPTIMA",
     "WRANGLER UNLIMITED 4X4 (4-DOOR)",
     "WRANGLER 4X4 (2-DOOR)",
@@ -216,7 +215,7 @@ const models = [
     "FIT",
     "LANCER EVOLUTION",
     "Q60 CONVERTIBL",
-    "Q60 COUP", ,
+    "Q60 COUP",
     "Q70",
     "COOPER SONVERTIBLE",
     "XFR",
