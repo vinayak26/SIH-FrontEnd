@@ -1,19 +1,32 @@
 import React from "react";
 import Code from "../DataVisual/Code/Code";
 import Graph from "../DataVisual/Graph/Graph";
-import "./DataVisual.css";
+import styled from "styled-components"
 
-export default function DataVisual(props) {
+export default function DataVisual(props) 
+
+{
   return (
     <div className="data-visual-container">
+      <Wrap bgColor={props.backgroundcolor}>
       <Code
-        text={props.text}
-        language={props.language}
+        text={props.code}
+        language={"python"}
         showLineNumbers={`true`}
       />
       <Graph
-      value={[54, 66, 69, 75, 88]}
+      value={props.graphyvalues}
       />
+      </Wrap>
     </div>
   );
 }
+
+const Wrap =styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: ${props=>`${props.bgColor}`};
+  display: flex;
+  flex-direction: row;
+
+`

@@ -1,11 +1,11 @@
 import React from "react";
 import Chart from "react-apexcharts";
+import styled from "styled-components";
 
 export default function Graph(props) {
   return (
-    <div>
+    <Wrap>
       <Chart
-        name="box"
         type="boxPlot"
         series={[
           {
@@ -30,7 +30,7 @@ export default function Graph(props) {
             mode: "dark"
           },
           legend: {
-            show: false
+            show: true
           },
           stroke: {
             show: true,
@@ -41,6 +41,13 @@ export default function Graph(props) {
           colors: ["#FF4A4A", "#FEB019"]
         }}
       />
-    </div>
+    </Wrap>
   );
 }
+
+
+const Wrap = styled.div`
+  width: 50%;
+  padding: 100px 20px 20px 20px;
+
+`
