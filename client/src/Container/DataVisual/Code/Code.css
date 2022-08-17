@@ -4,5 +4,6 @@
 
 }
 .result-text{
-    padding: 10px 0 0 20px;
+    padding: 10px 0 20px 20px;
+    width: 200px;
 }
