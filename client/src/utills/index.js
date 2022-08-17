@@ -709,4 +709,53 @@ const models = [
     "Other"];
 
 
-export { companies, models }
+
+const vehicleclasses=["MID-SIZE",
+"COMPACT",
+"SUV - SMALL",
+"SUV - STANDARD",
+"FULL-SIZE",
+"TWO-SEATER",
+"SUBCOMPACT",
+"PICKUP TRUCK - STANDARD",
+"MINICOMPACT",
+"STATION WAGON - SMALL",
+"VAN - PASSENGER",
+"VAN - CARGO",
+"MINIVAN",
+"PICKUP TRUCK - SMALL",
+"SPECIAL PURPOSE VEHICLE",
+"STATION WAGON - MID-SIZE",]
+
+const transmissions=["A6",
+"AS6",
+"M6",
+"A8",
+"AS8",
+"AS7",
+"M5",
+"AV",
+"A4",
+"AM7",
+"A5",
+"A7",
+"AV6",
+"AS5",
+"M7",
+"A9",
+"AM6",
+"AV7",
+"AV8",
+"AS9",
+"AM5",
+"AS4",
+"Other"]
+
+const fueltypes=["X",
+"Z",
+"E",
+"D",
+"Unknown"]
+
+
+export { companies, models, vehicleclasses,transmissions,fueltypes}

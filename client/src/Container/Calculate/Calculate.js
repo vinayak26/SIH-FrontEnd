@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./Calculate.css";
-import { companies, models} from "../../utills";
-import DummyText from "./components/DummyText";
+import {
+  companies,
+  models,
+  transmissions,
+  vehicleclasses,
+  fueltypes,
+} from "../../utills/index";
 
 export default function Calculate() {
   const handleonclick = () => {
@@ -14,7 +19,7 @@ export default function Calculate() {
       fueltype,
       mileage,
     ];
-    console.log(finalvalues)
+    console.log(finalvalues);
     Setuserresult(finalvalues);
   };
 
@@ -55,10 +60,9 @@ export default function Calculate() {
     Setmileage(event.target.value);
   };
 
-
   // Declared States for Hooks
 
-  const[userresult,Setuserresult] = useState();
+  const [userresult, Setuserresult] = useState();
   const [mileage, Setmileage] = useState();
   const [fueltype, Setfueltype] = useState();
   const [transmission, Settransmission] = useState();
@@ -70,9 +74,6 @@ export default function Calculate() {
     <div className="Calculate-Container">
       <div className="calculate-title">
         <h1>CARBON FOOTPRINT CALCULATOR</h1>
-      </div>
-      <div className="description-container">
-         {<DummyText />}
       </div>
       <div className="input-container">
         <div className="input-container-row-1">
@@ -86,12 +87,14 @@ export default function Calculate() {
               onChange={handleOnCompanychange}
             >
               <option value="">Company of your car...</option>
-              {companies.map(company=> (<option value={company}>{company}</option>))}
+              {companies.map((company) => (
+                <option value={company}>{company}</option>
+              ))}
             </select>
           </div>
           <br></br>
 
-          {/* MODEL IK ITS BIG  */}
+          {/* MODEL*/}
           <div>
             <label htmlFor="Model">Model:</label>
             <select
@@ -101,8 +104,9 @@ export default function Calculate() {
               onChange={handleOnModelchange}
             >
               <option value="">Model of your car...</option>
-              {models.map(model=>(<option value={model}>{model}</option>))}
-              
+              {models.map((model) => (
+                <option value={model}>{model}</option>
+              ))}
             </select>
           </div>
           <br></br>
@@ -117,30 +121,9 @@ export default function Calculate() {
               onChange={handleOnVechicleclasschange}
             >
               <option value="">Vehicle-Class of your car...</option>
-              <option value="MID-SIZE">MID-SIZE</option>
-              <option value="COMPACT">COMPACT</option>
-              <option value="SUV - SMALL">SUV - SMALL</option>
-              <option value="SUV - STANDARD">SUV - STANDARD</option>
-              <option value="FULL-SIZE">FULL-SIZE</option>
-              <option value="TWO-SEATER">TWO-SEATER</option>
-              <option value="SUBCOMPACT">SUBCOMPACT</option>
-              <option value="PICKUP TRUCK - STANDARD">
-                PICKUP TRUCK - STANDARD
-              </option>
-              <option value="MINICOMPACT">MINICOMPACT</option>
-              <option value="STATION WAGON - SMALL">
-                STATION WAGON - SMALL
-              </option>
-              <option value="VAN - PASSENGER">VAN - PASSENGER</option>
-              <option value="VAN - CARGO">VAN - CARGO</option>
-              <option value="MINIVAN">MINIVAN</option>
-              <option value="PICKUP TRUCK - SMALL">PICKUP TRUCK - SMALL</option>
-              <option value="SPECIAL PURPOSE VEHICLE">
-                SPECIAL PURPOSE VEHICLE
-              </option>
-              <option value="STATION WAGON - MID-SIZE">
-                STATION WAGON - MID-SIZE
-              </option>
+              {vehicleclasses.map((vehicleclass) => (
+                <option value={vehicleclass}>{vehicleclass}</option>
+              ))}
             </select>
           </div>
           <br></br>
@@ -169,29 +152,9 @@ export default function Calculate() {
               onChange={handleOnTransmissionchange}
             >
               <option value="">Transmission of your car...</option>
-              <option value="A6">A6</option>
-              <option value="AS6">AS6</option>
-              <option value="M6">M6</option>
-              <option value="A8">A8</option>
-              <option value="AS8">AS8</option>
-              <option value="AS7">AS7</option>
-              <option value="M5">M5</option>
-              <option value="AV">AV</option>
-              <option value="A4">A4</option>
-              <option value="AM7">AM7</option>
-              <option value="A5">A5</option>
-              <option value="A7">A7</option>
-              <option value="AV6">AV6</option>
-              <option value="AS5">AS5</option>
-              <option value="M7">M7</option>
-              <option value="A9">A9</option>
-              <option value="AM6">AM6</option>
-              <option value="AV7">AV7</option>
-              <option value="AV8">AV8</option>
-              <option value="AS9">AS9</option>
-              <option value="AM5">AM5</option>
-              <option value="AS4">AS4</option>
-              <option value="Other">Other/Don't Know</option>
+              {transmissions.map((transmission) => (
+                <option value={transmission}>{transmission}</option>
+              ))}
             </select>
           </div>
           <br></br>
@@ -205,11 +168,9 @@ export default function Calculate() {
               onChange={handleOnFuelchange}
             >
               <option value="">Fuel Type of your car...</option>
-              <option value="X">X</option>
-              <option value="Z">Z</option>
-              <option value="E">E</option>
-              <option value="D">D</option>
-              <option value="Unknown">.Don't know</option>
+              {fueltypes.map((fueltype) => (
+                <option value={fueltype}>{fueltype}</option>
+              ))}
             </select>
           </div>
           <br></br>
@@ -232,9 +193,14 @@ export default function Calculate() {
           <button className="btn-global" onClick={handleonclick}>
             SUBMIT
           </button>
+        </div>
+        <div className="output-fields">
           <textarea
-          placeholder="OUTPUT" cols="15" rows="3"
-          value={userresult}
+            readOnly="readonly"           
+            placeholder="OUTPUT"
+            cols="15"
+            rows="3"
+            value={userresult}
           ></textarea>
         </div>
       </div>

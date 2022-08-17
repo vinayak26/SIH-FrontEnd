@@ -19,23 +19,6 @@ label {
   width: 250px;
 }
 
-.description-container {
-  /* line-height:32px;
-font-size:20px;
-color:#fff;
-background: #3F51B5;
-margin:10px;
-padding: 15px 20px 15px 20px;
-border-radius: 5px;*/
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(255, 255, 255, 0.21);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2.2px);
-  -webkit-backdrop-filter: blur(2.2px);
-}
 .text {
   padding: 5px;
 }
@@ -64,3 +47,24 @@ body {
   padding: 30px 50px 60px 50px;
 }
 
+.submit-fields{
+  margin: auto;
+}
+
+.output-fields{
+  margin: auto;
+}
+
+.output-fields textarea{
+  outline: none;
+  height: 100px;
+  width: 350px;
+  padding: 12px 20px;
+  margin: 30px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
