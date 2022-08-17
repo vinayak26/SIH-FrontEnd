@@ -10,7 +10,7 @@ export default function Code(props) {
         showLineNumbers={props.showLineNumbers}
         theme={googlecode}
       />
-      <h6 className="result-text">Range = (76.5, 424.5)</h6>
+      <h6 className="result-text">{props.resulttext}</h6>
     </div>
   );
 }
