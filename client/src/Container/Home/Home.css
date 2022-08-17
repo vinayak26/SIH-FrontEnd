@@ -7,7 +7,7 @@
 }
 .HomeContainer::after{
   opacity: 0.2;
-  z-index: -1;
+  z-index: 1;
 }
 
 .Team{

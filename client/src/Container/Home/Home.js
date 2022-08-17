@@ -5,7 +5,7 @@ import TypeAnimation from "react-type-animation";
 export default function Home() {
   return (
     <div className="HomeContainer">
-      <div className="Team">
+      <div className="Team" >
         <h1>TEAM WALLOP</h1>
       </div>
       <div className="Title-Container">
