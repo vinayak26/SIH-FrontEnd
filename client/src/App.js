@@ -3,6 +3,7 @@ import Home from './Container/Home/Home';
 import Calculate from './Container/Calculate/Calculate';
 import AboutUs from './Container/AboutUs/AboutUs';
 import DataVisual from './Container/DataVisual/DataVisual';
+import ExcelView from './Container/ExcelView/ExcelView';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home/>
       <Calculate/>
       <AboutUs/>
+      <ExcelView/>
       <DataVisual
       text={`#Finding IQR
 Q1 = dataset.iloc[:, -1].quantile(0.25)
