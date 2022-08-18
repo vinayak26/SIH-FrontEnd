@@ -2,7 +2,6 @@ import './App.css';
 import Home from './Container/Home/Home';
 import Calculate from './Container/Calculate/Calculate';
 import AboutUs from './Container/AboutUs/AboutUs';
-import DataVisual from './Container/DataVisual/DataVisual';
 import ExcelView from './Container/ExcelView/ExcelView';
 import DataVisualRender from './Container/DataVisual/DataVisualRender';
 
