@@ -30,6 +30,61 @@ Total number of requireed rows = 1062
 const removingoutliners = `#Removing outliers
 df = dataset[~((dataset.iloc[:, -1] < LB) |(dataset.iloc[:, -1] > UB))]`
 
+const findingcorrelation = `#Findind Correlation among features
+plt.figure(figsize=(12,10))
+cor = X.corr()
+sns.heatmap(cor, annot=True, cmap=plt.cm.CMRmap_r)
+plt.show()`
+
+const findingcorrelation2 = `#With the following function we can select highly correlated features
+#it will remove the first feature that is correlated with anything other feature
+
+def correlation(dataset, threshold):
+col_corr = set()  # Set of all the names of correlated columns
+corr_matrix = dataset.corr()
+for i in range(len(corr_matrix.columns)):for j in range(i):
+if abs(corr_matrix.iloc[i, j]) > threshold: # we are interested in absolute coeff value
+colname = corr_matrix.columns[i]  # getting the name of column
+col_corr.add(colname)
+return col_corr`
+
+const findingcorrelation3 = `#Removing highly correlated and not useful features
+X.drop(["MODELYEAR","CYLINDERS","FUELCONSUMPTION_CITY","FUELCONSUMPTION_HWY","FUELCONSUMPTION_COMB"], axis=1, inplace=True)`
+
+const findingcorrelation4 = `#Removing highly correlated and not useful features
+X.drop(["MODELYEAR","CYLINDERS","FUELCONSUMPTION_CITY","FUELCONSUMPTION_HWY","FUELCONSUMPTION_COMB"], axis=1, inplace=True)`
+
+const findingcorrelation5 = `#Total features we will get after performing One Hot Encoding on current data
+print("Total number of Features to be resulted after Standard One Hot Encoding : ", pd.get_dummies(X, drop_first = True).shape[1])
+output > Total number of Features to be resulted after Standard One Hot Encoding :  744`
+
+const findingcorrelation6 = `<h6 className="result-text">corr_features = correlation(X, 0.8)
+corr_features</h6>`
 
 
-export {detectingoutliners,handelingoutliners,numberofoutliners,removingoutliners}
+const uniquelables = `#Total features before performing One Hot Encoding on current data
+print("Total number of Features resulted after One_Hot_Encoding_Top_X : ", len(X.columns))`
+
+const uniquelables2 = `#Making Dictionary of Categorical features with required number of important unique labels 
+one_hot_features = {"MAKE":35, "MODEL":10, "VEHICLECLASS":15, "TRANSMISSION":5, "FUELTYPE":5}`
+
+const uniquelables3 = `#Total number of unique labels in each feature
+labels = []
+features = []
+limits = []
+for col, limit in one_hot_features.items():
+labels.append(len(X[col].unique()))
+features.append(col)
+limits.append(limit)
+`
+const uniquelables4=`#Plotting Bar Graph to represent number of unique labels before One_Hot_Encoding_Top_X
+sns.barplot(x = features, y = labels)
+sns.set(rc = {'figure.figsize':(20,12)})
+plt.show()`
+
+const uniquelables5 = `#Total features we will get after performing One Hot Encoding on current data
+print("Total number of Features to be resulted after Standard One Hot Encoding : ", pd.get_dummies(X, drop_first = True).shape[1])`
+
+
+export {detectingoutliners,handelingoutliners,numberofoutliners,removingoutliners,findingcorrelation,findingcorrelation2,findingcorrelation3,findingcorrelation4,findingcorrelation5,findingcorrelation6,
+uniquelables,uniquelables2,uniquelables3,uniquelables4,uniquelables5}

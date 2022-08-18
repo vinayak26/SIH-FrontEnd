@@ -6,7 +6,8 @@ import styled from "styled-components";
 
 function Houtliners() {
   return (
-    <div>        <Text>
+    <div>        
+      <Text>
     <h1>Handling Outliners</h1>
   </Text> 
 <Container>

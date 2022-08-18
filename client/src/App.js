@@ -5,7 +5,8 @@ import AboutUs from './Container/AboutUs/AboutUs';
 import ExcelView from './Container/ExcelView/ExcelView';
 import Doutliners from './Container/DataVisual/Doutliners';
 import Houtliners from './Container/DataVisual/Houtliners';
-// import DataVisualRender from './Container/DataVisual/DataVisualRender';
+import Fcorreraltion from './Container/DataVisual/Fcorreraltion';
+import Cuniquelabels from './Container/DataVisual/Cuniquelabels';
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <Calculate/>
       <AboutUs/>
       <ExcelView/>
-      {/* <DataVisualRender/> */}
       <Doutliners/>
       <Houtliners/>
+      <Fcorreraltion/>
+      <Cuniquelabels/>
     </div>
   );
 }
