@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { OutTable, ExcelRenderer } from 'react-excel-renderer';
-import { Jumbotron, Col, Input, InputGroup, InputGroupAddon, FormGroup, Label, Button, Fade, FormFeedback, Container, Card } from 'reactstrap';
-
+import { Col, Input, InputGroup, FormGroup, Label, Button, Fade, FormFeedback, Container, Card } from 'reactstrap';
+import './excelview.css';
 class ExcelView extends Component {
     constructor(props) {
         super(props);
@@ -68,36 +68,30 @@ class ExcelView extends Component {
 
     render() {
         return (
-            <div>
-                <Container>
-                    <form>
-                        <FormGroup row>
-                            <Label for="exampleFile" xs={6} sm={4} lg={2} size="lg">Upload</Label>
-                            <Col xs={4} sm={8} lg={10}>
-                                <InputGroup>
-                                    <Button color="info" style={{ color: "white", zIndex: 0 }} onClick={this.openFileBrowser.bind(this)}><i className="cui-file"></i> Browse&hellip;</Button>
-                                    <input type="file" hidden onChange={this.fileHandler.bind(this)} ref={this.fileInput} onClick={(event) => { event.target.value = null }} style={{ "padding": "10px" }} />
-                                    <Input type="text" className="form-control" value={this.state.uploadedFileName} readOnly invalid={this.state.isFormInvalid} />
-                                    <FormFeedback>
-                                        <Fade in={this.state.isFormInvalid} tag="h6" style={{ fontStyle: "italic" }}>
-                                            Please select a .xlsx file only !
-                                        </Fade>
-                                    </FormFeedback>
-                                </InputGroup>
-                            </Col>
-                        </FormGroup>
-                    </form>
+            <Container>
+                <FormGroup row>
+                    <Label for="exampleFile" xs={6} sm={4} lg={2} size="lg">Upload</Label>
+                    <Col xs={4} sm={8} lg={10}>
+                        <InputGroup>
+                            <Button color="info" style={{ color: "white", zIndex: 0 }} onClick={this.openFileBrowser.bind(this)}><i className="cui-file"></i> Browse&hellip;</Button>
+                            <input type="file" hidden onChange={this.fileHandler.bind(this)} ref={this.fileInput} onClick={(event) => { event.target.value = null }} style={{ "padding": "10px" }} />
+                            <Input type="text" className="form-control" value={this.state.uploadedFileName} readOnly invalid={this.state.isFormInvalid} />
+                                <FormFeedback>
+                                    <Fade in={this.state.isFormInvalid} tag="h6" style={{ fontStyle: "italic" }}>
+                                        Please select a .xlsx file only !
+                                    </Fade>
+                                </FormFeedback>
+                        </InputGroup>
+                    </Col>
+                </FormGroup>
 
-                    {this.state.dataLoaded &&
-                        <div>
-                            <Card body outline color="secondary" className="restrict-card">
-
-                                <OutTable data={this.state.rows} columns={this.state.cols} tableClassName="ExcelTable2007" tableHeaderRowClass="heading" />
-
-                            </Card>
-                        </div>}
-                </Container>
-            </div>
+                {this.state.dataLoaded &&
+                    <div>
+                        <Card className="restrict-card">
+                            <OutTable data={this.state.rows} columns={this.state.cols} tableClassName="ExcelTable2007" tableHeaderRowClass="heading" />
+                        </Card>
+                    </div>}
+            </Container>
         );
     }
 }
