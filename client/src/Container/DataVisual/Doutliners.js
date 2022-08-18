@@ -76,7 +76,7 @@ const Container = styled.div`
 
 const CodeBlock = styled.div`
   width: 50%;
-  padding: 200px 20px 20px 20px;
+  padding: 250px 20px 20px 20px;
 `;
 
 const Text = styled.div`

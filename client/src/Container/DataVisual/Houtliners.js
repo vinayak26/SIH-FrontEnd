@@ -9,28 +9,8 @@ function Houtliners() {
     <div>        <Text>
     <h1>Handling Outliners</h1>
   </Text> 
-<Container>       
-  <CodeBlock>
-    <div className="code-container">
-      <CopyBlock
-        text={handelingoutliners}
-        language="python"
-        showLineNumbers="true"
-        theme={googlecode}
-      />
-      <ResultText>
-        <h6 className="result-text">Number of outliers = 6 {"\n"}
-        Total number of requireed rows = 1062</h6>
-      </ResultText>
-      <CopyBlock
-        text={removingoutliners}
-        language="python"
-        showLineNumbers="true"
-        theme={googlecode}
-      />
-    </div>
-  </CodeBlock>
-  <GraphBlock>
+<Container>
+<GraphBlock>
     <Chart
       type="boxPlot"
       series={[
@@ -67,25 +47,46 @@ function Houtliners() {
         colors: ["#FF4A4A", "#FEB019"],
       }}
     />
-  </GraphBlock>
+  </GraphBlock>       
+  <CodeBlock>
+    <div className="code-container">
+      <CopyBlock
+        text={handelingoutliners}
+        language="python"
+        showLineNumbers="true"
+        theme={googlecode}
+      />
+      <ResultText>
+        <h6 className="result-text">Number of outliers = 6 {"\n"}
+        Total number of requireed rows = 1062</h6>
+      </ResultText>
+      <CopyBlock
+        text={removingoutliners}
+        language="python"
+        showLineNumbers="true"
+        theme={googlecode}
+      />
+    </div>
+  </CodeBlock>
+
 </Container></div>
   )
 }
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: #030f18;
   height:100vh;
 `;
 
 const CodeBlock = styled.div`
   width: 50%;
-  padding: 100px 20px 20px 20px;
+  padding: 150px 20px 20px 20px;
 `;
 
 const Text = styled.div`
 
-  padding: 50px 0 0 0;
+  padding: 80px 0 0 0;
   background-color: black;
   text-align:right;
   height:80px;
@@ -99,7 +100,7 @@ const ResultText = styled.div`
 
 const GraphBlock = styled.div`
   width: 50%;
-  margin: 100px 20px 20px 20px;
+  margin: 150px 20px 20px 20px;
 `;
 
 export default Houtliners
