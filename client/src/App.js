@@ -3,7 +3,9 @@ import Home from './Container/Home/Home';
 import Calculate from './Container/Calculate/Calculate';
 import AboutUs from './Container/AboutUs/AboutUs';
 import ExcelView from './Container/ExcelView/ExcelView';
-import DataVisualRender from './Container/DataVisual/DataVisualRender';
+import Doutliners from './Container/DataVisual/Doutliners';
+import Houtliners from './Container/DataVisual/Houtliners';
+// import DataVisualRender from './Container/DataVisual/DataVisualRender';
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       <Calculate/>
       <AboutUs/>
       <ExcelView/>
-      <DataVisualRender/>
+      {/* <DataVisualRender/> */}
+      <Doutliners/>
+      <Houtliners/>
     </div>
   );
 }
