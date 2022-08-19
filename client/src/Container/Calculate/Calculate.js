@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import "./Calculate.css";
 import {
   companies,
@@ -7,203 +7,237 @@ import {
   vehicleclasses,
   fueltypes,
 } from "../../utills/index";
+import TypeAnimation from "react-type-animation";
 
-export default function Calculate() {
-  const handleonclick = () => {
-    let finalvalues = [
-      company,
-      model,
-      vehicleclass,
-      enginesize,
-      transmission,
-      fueltype,
-      mileage,
-    ];
-    console.log(finalvalues);
-    Setuserresult(finalvalues);
+class Calculate extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: false,
+      formData: {
+        // sepalWidth: 200,
+        company: "",
+        model: "",
+        vehicleclass: "",
+        enginesize: 0,
+        transmission: "",
+        fueltype: "",
+        mileage: 0,
+      },
+      result: "",
+    };
+  }
+
+  handleChange = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
+    var formData = this.state.formData;
+    formData[name] = value;
+    this.setState({
+      formData,
+    });
   };
 
-  // HOOKS FOR COMPANY
-
-  const handleOnCompanychange = (event) => {
-    Setcompany(event.target.value);
+  handlePredictClick = (event) => {
+    const formData = this.state.formData;
+    this.setState({ isLoading: true });
+    fetch("http://127.0.0.1:5000/prediction/", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({
+          result: response.result,
+          isLoading: false,
+        });
+      });
   };
 
-  // HOOKS FOR MODEL
-
-  const handleOnModelchange = (event) => {
-    Setmodel(event.target.value);
+  handleCancelClick = (event) => {
+    this.setState({ result: "" });
   };
 
-  // HOOKS FOR ENGINE SIZE
-  const handleOnEnginechange = (event) => {
-    Setenginesize(event.target.value);
-  };
+  render() {
+    const isLoading = this.state.isLoading;
+    const formData = this.state.formData;
+    const result = this.state.result;
 
-  // HOOKS FOR VEHICLE CLASS
-  const handleOnVechicleclasschange = (event) => {
-    Setvehicleclass(event.target.value);
-  };
+    var COMPANIES = [];
+    for (var i = 0; i < companies.length; i++) {
+      COMPANIES.push(
+        <option key={companies[i]} value={companies[i]}>
+          {companies[i]}
+        </option>
+      );
+    }
 
-  // HOOKS FOR TRANSMISSION
-  const handleOnTransmissionchange = (event) => {
-    Settransmission(event.target.value);
-  };
+    var MODELS = [];
+    for (var i = 0; i < models.length; i++) {
+      MODELS.push(
+        <option key={models[i]} value={models[i]}>
+          {models[i]}
+        </option>
+      );
+    }
 
-  // HOOKS FOR FUEL TYPE
-  const handleOnFuelchange = (event) => {
-    Setfueltype(event.target.value);
-  };
+    var VEHICLECLASSES = [];
+    for (var i = 0; i < vehicleclasses.length; i++) {
+      VEHICLECLASSES.push(
+        <option key={vehicleclasses[i]} value={vehicleclasses[i]}>
+          {vehicleclasses[i]}
+        </option>
+      );
+    }
 
-  //HOOKS FOR MILEAGE
-  const handleOnMileagechange = (event) => {
-    Setmileage(event.target.value);
-  };
+    var TRANSMISSIONS = [];
+    for (var i = 0; i < transmissions.length; i++) {
+      TRANSMISSIONS.push(
+        <option key={transmissions[i]} value={transmissions[i]}>
+          {transmissions[i]}
+        </option>
+      );
+    }
 
-  // Declared States for Hooks
+    var FUELTYPES = [];
+    for (var i = 0; i < fueltypes.length; i++) {
+      FUELTYPES.push(
+        <option key={fueltypes[i]} value={fueltypes[i]}>
+          {fueltypes[i]}
+        </option>
+      );
+    }
 
-  const [userresult, Setuserresult] = useState();
-  const [mileage, Setmileage] = useState();
-  const [fueltype, Setfueltype] = useState();
-  const [transmission, Settransmission] = useState();
-  const [vehicleclass, Setvehicleclass] = useState();
-  const [model, Setmodel] = useState();
-  const [enginesize, Setenginesize] = useState();
-  const [company, Setcompany] = useState("");
-  return (
-    <div className="Calculate-Container">
-      <div className="calculate-title">
-        <h1>CARBON FOOTPRINT CALCULATOR</h1>
+    return (
+      <div className="Calculate-Container">
+        <div className="calculate-title">
+          <h1>CARBON FOOTPRINT CALCULATOR</h1>
+        </div>
+        <div className="input-container">
+          <div className="input-container-row-1">
+          <div>
+              <label>COMPANY:</label>
+              <select
+                className="inputfield"
+                value={formData.company}
+                name="company"
+                placeholder="Select Model..."
+                onChange={this.handleChange}
+              >
+                {COMPANIES}
+              </select>
+            </div>
+            <br></br>
+            <div>
+              <label>MODEL:</label>
+              <select
+                className="inputfield"
+                value={formData.model}
+                name="model"
+                placeholder="Select Model..."
+                onChange={this.handleChange}
+              >
+                {MODELS}
+              </select>
+            </div>
+            <br></br>
+            <div>
+              <label>VEHICLE CLASS:</label>
+              <select
+                className="inputfield"
+                value={formData.vehicleclass}
+                name="vehicleclass"
+                placeholder="Select Vehicle Class"
+                onChange={this.handleChange}
+              >
+                {VEHICLECLASSES}
+              </select>
+            </div>
+            <br></br>
+            <div>
+              <label className="inputfield">
+                Enter Engine Size:
+                <input
+                  type="text"
+                  name="enginesize"
+                  value={formData.enginesize}
+                  onChange={this.handleChange}
+                  placeholder="Engine size of your car"
+                ></input>
+              </label>
+            </div>
+          </div>
+          <div className="input-container-row-2">
+            <div>
+              <label>Transmission:</label>
+              <select
+                className="inputfield"
+                value={formData.transmission}
+                name="transmission"
+                placeholder="Select Transmission"
+                onChange={this.handleChange}
+              >
+                {TRANSMISSIONS}
+              </select>
+            </div>
+            <br></br>
+            <div>
+              <label>Fuel Type:</label>
+              <select
+                className="inputfield"
+                value={formData.fueltype}
+                name="fueltype"
+                placeholder="Select Fueltypes"
+                onChange={this.handleChange}
+              >
+                {FUELTYPES}
+              </select>
+            </div>
+            <br></br>
+            <div>
+              <label className="inputfield">
+                Enter mileage:
+                <input
+                  type="text"
+                  name="mileage"
+                  value={formData.mileage}
+                  onChange={this.handleChange}
+                  placeholder="Engine Mileage of your car"
+                ></input>
+              </label>
+            </div>
+          </div>
+          <div className="submit-fields">
+            <button
+              className="btn-global"
+              disabled={isLoading}
+              onClick={!isLoading ? this.handlePredictClick : null}
+            >
+              {isLoading ? "Making prediction" : "Predict"}
+            </button>
+
+            <button
+              className="btn-global"
+              disabled={isLoading}
+              onClick={this.handleCancelClick}
+            >
+              Reset Prediction
+            </button>
+          </div>
+          <div className="output-fields">
+            {result === "" ? null : (
+              <h5 className="result-text">{result}</h5>
+            )}
+          </div>
+        </div>
       </div>
-      <div className="input-container">
-        <div className="input-container-row-1">
-          {/* COMPANY */}
-          <div>
-            <label htmlFor="Company">Company:</label>
-            <select
-              className="inputfield"
-              name="Company"
-              placeholder="Select Company..."
-              onChange={handleOnCompanychange}
-            >
-              <option value="">Company of your car...</option>
-              {companies.map((company) => (
-                <option value={company}>{company}</option>
-              ))}
-            </select>
-          </div>
-          <br></br>
-
-          {/* MODEL*/}
-          <div>
-            <label htmlFor="Model">Model:</label>
-            <select
-              className="inputfield"
-              name="Model"
-              placeholder="Select Model..."
-              onChange={handleOnModelchange}
-            >
-              <option value="">Model of your car...</option>
-              {models.map((model) => (
-                <option value={model}>{model}</option>
-              ))}
-            </select>
-          </div>
-          <br></br>
-
-          {/* VEHICLE CALSS */}
-          <div>
-            <label htmlFor="Class">Class:</label>
-            <select
-              className="inputfield"
-              name="Class"
-              placeholder="Select Vehicle-Class..."
-              onChange={handleOnVechicleclasschange}
-            >
-              <option value="">Vehicle-Class of your car...</option>
-              {vehicleclasses.map((vehicleclass) => (
-                <option value={vehicleclass}>{vehicleclass}</option>
-              ))}
-            </select>
-          </div>
-          <br></br>
-
-          {/* ENGINE SIZE */}
-          <div>
-            <label className="inputfield" htmlFor="Engine-size">
-              Enter Engine Size:
-              <input
-                onChange={handleOnEnginechange}
-                placeholder="Engine size of your car"
-              ></input>
-            </label>
-          </div>
-        </div>
-
-        <br></br>
-        <div className="input-container-row-2">
-          {/* TRANSMISSION */}
-          <div>
-            <label htmlFor="Transmission">Transmission:</label>
-            <select
-              className="inputfield"
-              name="Transmission"
-              placeholder="Select Transmission of your car..."
-              onChange={handleOnTransmissionchange}
-            >
-              <option value="">Transmission of your car...</option>
-              {transmissions.map((transmission) => (
-                <option value={transmission}>{transmission}</option>
-              ))}
-            </select>
-          </div>
-          <br></br>
-          {/* FUEL TYPE */}
-          <div>
-            <label htmlFor="Fuel Type">Fuel Type:</label>
-            <select
-              className="inputfield"
-              name="Fuel_Type"
-              placeholder="Select Fuel Type of your car..."
-              onChange={handleOnFuelchange}
-            >
-              <option value="">Fuel Type of your car...</option>
-              {fueltypes.map((fueltype) => (
-                <option value={fueltype}>{fueltype}</option>
-              ))}
-            </select>
-          </div>
-          <br></br>
-
-          {/* MILEAGE */}
-          <div>
-            <label className="inputfield" htmlFor="Mileage in Km/L">
-              Mileage in Km/L:
-            </label>
-            <input
-              onChange={handleOnMileagechange}
-              name="Mileage in Km/L:"
-              type="text"
-              placeholder="Average kilometers per litres)..."
-            ></input>
-          </div>
-        </div>
-        {/* FINAL SUBMIT BUTTON  */}
-        <div className="submit-fields">
-          <button className="btn-global" onClick={handleonclick}>
-            SUBMIT
-          </button>
-        </div>
-        <div className="output-fields">
-          <textarea
-            readOnly="readonly"           
-            placeholder="OUTPUT"
-            cols="15"
-            rows="3"
-            value={userresult}
-          ></textarea>
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default Calculate;

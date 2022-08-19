@@ -1,7 +1,6 @@
 import './App.css';
 import Home from './Container/Home/Home';
-// import Calculate from './Container/Calculate/Calculate';
-import Apptest from './Container/Calculate/Apptest';
+import Calculate from './Container/Calculate/Calculate';
 import AboutUs from './Container/AboutUs/AboutUs';
 import ExcelView from './Container/ExcelView/ExcelView';
 import Doutliners from './Container/DataVisual/Doutliners';
@@ -15,8 +14,7 @@ function App() {
   return (
     <div className="App">
       <Home/>
-      {/* <Calculate/> */}
-      <Apptest/>
+      <Calculate/>
       <AboutUs/>
       <ExcelView/>
       <Doutliners/>

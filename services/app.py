@@ -5,8 +5,10 @@ import pickle
 import numpy as np
 import pandas as pd
 import sys
+from flask_cors import CORS
 
 flask_app = Flask(__name__)
+CORS(flask_app)
 app = Api(app=flask_app,
           version="1.0",
           title="CO2 Emission Predictor",
