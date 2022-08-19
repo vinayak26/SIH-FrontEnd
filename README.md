@@ -1,9 +1,9 @@
 # Setup FrontEnd
-cd client
-npm install
-npm start 
+cd client </br>
+npm install </br>
+npm start </br>
 
 # Setup Backend
-cd services
-pip install -r requirements.txt
-flask run 
+cd services </br>
+pip install -r requirements.txt </br>
+flask run </br>
