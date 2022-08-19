@@ -61,6 +61,11 @@ output > Total number of Features to be resulted after Standard One Hot Encoding
 const findingcorrelation6 = `<h6 className="result-text">corr_features = correlation(X, 0.8)
 corr_features</h6>`
 
+const findingcorrelation7 = `{'CYLINDERS',
+'FUELCONSUMPTION_CITY',
+'FUELCONSUMPTION_COMB',
+'FUELCONSUMPTION_COMB_MPG',
+'FUELCONSUMPTION_HWY'}`
 
 const uniquelables = `#Total features before performing One Hot Encoding on current data
 print("Total number of Features resulted after One_Hot_Encoding_Top_X : ", len(X.columns))`
@@ -86,5 +91,29 @@ const uniquelables5 = `#Total features we will get after performing One Hot Enco
 print("Total number of Features to be resulted after Standard One Hot Encoding : ", pd.get_dummies(X, drop_first = True).shape[1])`
 
 
-export {detectingoutliners,handelingoutliners,numberofoutliners,removingoutliners,findingcorrelation,findingcorrelation2,findingcorrelation3,findingcorrelation4,findingcorrelation5,findingcorrelation6,
-uniquelables,uniquelables2,uniquelables3,uniquelables4,uniquelables5}
+export {detectingoutliners,handelingoutliners,numberofoutliners,removingoutliners}
+export {findingcorrelation,findingcorrelation2,findingcorrelation3,findingcorrelation4,findingcorrelation5,findingcorrelation6,findingcorrelation7}
+export {uniquelables,uniquelables2,uniquelables3,uniquelables4,uniquelables5}
+
+const hotencoding = `#Function to perform One_Hot_Encoding_Top_X
+def one_hot_encoding_top_x(df, variable, top_x_labels):
+for label in top_x_labels:
+df[variable+'_'+label] = np.where(df[variable] == label, 1, 0)
+df.drop([variable], axis=1, inplace=True)`
+
+const hotencoding2 = `#Performing One_Hot_Encoding_Top_X
+for variable, limit in one_hot_features.items():
+top_x_labels = [x for x in X[variable].value_counts().sort_values(ascending = False).head(limit).index]
+one_hot_encoding_top_x(X, variable, top_x_labels)`
+
+const hotencoding3 = `#Total features we are getting after performing One Hot Encoding on current data
+print("Total number of Features resulted after One_Hot_Encoding_Top_X : ", len(X.columns))
+`
+
+const hotencoding4=`#Plotting Bar Graph to represent number of unique labels after One_Hot_Encoding_Top_X
+sns.barplot(x = features, y = limits)
+sns.set(rc = {'figure.figsize':(20,12)})
+plt.show()`
+
+
+export {hotencoding,hotencoding2,hotencoding3,hotencoding4}

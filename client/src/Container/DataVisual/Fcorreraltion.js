@@ -6,7 +6,8 @@ import {
   findingcorrelation3,
   findingcorrelation4,
   findingcorrelation5,
-  findingcorrelation6
+  findingcorrelation6,
+  findingcorrelation7
 } from "../../utills/codes";
 import styled from "styled-components";
 
@@ -60,11 +61,7 @@ function Fcorreraltion() {
               />
             </CopyBlockSections>
             <ResultText>
-        <h6 className="result-text">'CYLINDERS',
- 'FUELCONSUMPTION_CITY',
- 'FUELCONSUMPTION_COMB',
- 'FUELCONSUMPTION_COMB_MPG',
- 'FUELCONSUMPTION_HWY'</h6>
+        <h6 className="result-text">{findingcorrelation7}</h6>
       </ResultText>
             <CopyBlockSections>
               <CopyBlock

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { OutTable, ExcelRenderer } from 'react-excel-renderer';
-import { Col, Input, InputGroup, FormGroup, Label, Button, Fade, FormFeedback, Container, Card } from 'reactstrap';
+import { Col, Input, InputGroup, FormGroup,Button, Fade, FormFeedback, Container, Card } from 'reactstrap';
 import './excelview.css';
+
 class ExcelView extends Component {
     constructor(props) {
         super(props);
@@ -70,7 +71,6 @@ class ExcelView extends Component {
         return (
             <Container>
                 <FormGroup row>
-                    <Label for="exampleFile" xs={6} sm={4} lg={2} size="lg">Upload</Label>
                     <Col xs={4} sm={8} lg={10}>
                         <InputGroup>
                             <Button color="info" style={{ color: "white", zIndex: 0 }} onClick={this.openFileBrowser.bind(this)}><i className="cui-file"></i> Browse&hellip;</Button>
@@ -95,6 +95,7 @@ class ExcelView extends Component {
         );
     }
 }
+
 
 
 export default ExcelView;
