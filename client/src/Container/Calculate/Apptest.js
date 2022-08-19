@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./Calculate.css";
-
-
 import {
   companies,
   models,
@@ -18,13 +16,13 @@ class Apptest extends Component {
       isLoading: false,
       formData: {
         // sepalWidth: 200,
-        company: "FORD ",
-        model: "F150 FFV",
-        vehicleclass: "MID-SIZE",
-        enginesize: 2,
-        transmission: "A6",
-        fueltype: "X",
-        mileage: 20,
+        company: "",
+        model: "",
+        vehicleclass: "",
+        enginesize: 0,
+        transmission: "",
+        fueltype: "",
+        mileage: 0,
       },
       result: "",
     };
@@ -122,12 +120,12 @@ class Apptest extends Component {
         <div className="input-container">
           <div className="input-container-row-1">
           <div>
-              <label>COMPANIES:</label>
+              <label>COMPANY:</label>
               <select
                 className="inputfield"
                 value={formData.company}
-                name="model"
-                as="select"
+                name="company"
+                placeholder="Select Model..."
                 onChange={this.handleChange}
               >
                 {COMPANIES}
@@ -135,7 +133,7 @@ class Apptest extends Component {
             </div>
             <br></br>
             <div>
-              <label>MODELS:</label>
+              <label>MODEL:</label>
               <select
                 className="inputfield"
                 value={formData.model}
@@ -148,11 +146,11 @@ class Apptest extends Component {
             </div>
             <br></br>
             <div>
-              <label>Vehicle Class:</label>
+              <label>VEHICLE CLASS:</label>
               <select
                 className="inputfield"
                 value={formData.vehicleclass}
-                name="model"
+                name="vehicleclass"
                 placeholder="Select Vehicle Class"
                 onChange={this.handleChange}
               >
@@ -179,7 +177,7 @@ class Apptest extends Component {
               <select
                 className="inputfield"
                 value={formData.transmission}
-                name="Transmission"
+                name="transmission"
                 placeholder="Select Transmission"
                 onChange={this.handleChange}
               >
@@ -192,7 +190,7 @@ class Apptest extends Component {
               <select
                 className="inputfield"
                 value={formData.fueltype}
-                name="FuelTypes"
+                name="fueltype"
                 placeholder="Select Fueltypes"
                 onChange={this.handleChange}
               >
