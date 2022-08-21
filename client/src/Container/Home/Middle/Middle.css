@@ -71,10 +71,10 @@ p {
   border-radius: 1rem;
   font-family: Arial;
   color: #030f18;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 1rem 2rem 1rem 2rem;
   text-decoration: none;
-  margin: 3rem 5rem;
+  margin: 5rem 5rem;
 }
 
 .btn-global:hover {
@@ -92,10 +92,10 @@ p {
     font-size: 55%;
   }
   .crb-logo{
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   p{
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .Title-logo{
     font-size: 3rem;

@@ -125,16 +125,13 @@ function Cuniquelabels() {
   );
 }
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
   background-color: black;
-  height: 980px;
-  background-color: #030f18;
+  height: 100vh;
 `;
 const GraphBlock = styled.div`
   height: 60%;
   width: 60%;
-  margin: 100px 20px 0 0px;
+  padding: 100px 20px 0 0px;
 `;
 // const CodeBlock = styled.div`
 //   height: 100%;
@@ -146,7 +143,7 @@ const GraphBlock = styled.div`
 //   padding: 0 0 20px 0;
 // `;
 const Text = styled.div`
-  padding: 80px 0 0 0;
+  // margin: 80px 0 0 0;
   background-color: black;
   text-align: right;
   height: 80px;

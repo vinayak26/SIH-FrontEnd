@@ -1,9 +1,10 @@
 import React from 'react'
-import Doutliners from "./Doutliners"
-import Houtliners from "./Houtliners"
-import Fcorreraltion from "./Fcorreraltion"
+// import Doutliners from "./Doutliners"
+// import Houtliners from "./Houtliners"
+// import Fcorreraltion from "./Fcorreraltion"
 import Cuniquelabels from "./Cuniquelabels"
 import Photencoding from './Photencoding'
+import MLcomp from './MLcomp';
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 
@@ -17,11 +18,12 @@ export default function DataVisual(props) {
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
   return (
     <div id={props.id || ""}>
-        <Doutliners/>
+        {/* <Doutliners/>
         <Houtliners/>
-        <Fcorreraltion/>
+        <Fcorreraltion/> */}
         <Cuniquelabels/>
         <Photencoding/>
+        <MLcomp/>
     </div>
   )
 }

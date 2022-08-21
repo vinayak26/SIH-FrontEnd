@@ -171,6 +171,7 @@ class Calculate extends Component {
               <label className="inputfield">
                 Enter Engine Size:
                 <input
+                  className="inputbox"
                   type="text"
                   name="enginesize"
                   value={formData.enginesize}
@@ -211,6 +212,7 @@ class Calculate extends Component {
               <label className="inputfield">
                 Enter mileage:
                 <input
+                className="inputbox"
                   type="text"
                   name="mileage"
                   value={formData.mileage}
@@ -226,7 +228,7 @@ class Calculate extends Component {
               disabled={isLoading}
               onClick={!isLoading ? this.handlePredictClick : null}
             >
-              {isLoading ? "Making prediction" : "Predict"}
+              {isLoading ? "Making prediction" : "Predict Result"}
             </button>
 
             <button
