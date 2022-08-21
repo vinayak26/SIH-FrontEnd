@@ -13,7 +13,7 @@ export default function Container() {
     }
 
     return (
-        <div className='portfolio-container'>
+        <div className='project-container'>
             {mapAllScreens()}
         </div>
     )
