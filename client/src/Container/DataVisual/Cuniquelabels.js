@@ -1,13 +1,13 @@
 import React from "react";
-import { CopyBlock, googlecode } from "react-code-blocks";
+// import { CopyBlock, googlecode } from "react-code-blocks";
 import Chart from "react-apexcharts";
-import {
-  uniquelables,
-  uniquelables2,
-  uniquelables3,
-  uniquelables4,
-  uniquelables5,
-} from "../../utilities/codes";
+// import {
+//   uniquelables,
+//   uniquelables2,
+//   uniquelables3,
+//   uniquelables4,
+//   uniquelables5,
+// } from "../../utilities/codes";
 import styled from "styled-components";
 
 function Cuniquelabels() {
@@ -60,7 +60,7 @@ function Cuniquelabels() {
             }}
           />
         </GraphBlock>
-        <CodeBlock>
+        {/* <CodeBlock>
           <CopyBlockSections>
             <CopyBlock
               text={uniquelables}
@@ -119,7 +119,7 @@ function Cuniquelabels() {
           <ResultText>
             <h6>Total number of Features to be resulted after Standard One Hot Encoding :  744</h6>
           </ResultText>
-        </CodeBlock>
+        </CodeBlock> */}
       </Container>
     </div>
   );
@@ -136,24 +136,24 @@ const GraphBlock = styled.div`
   width: 60%;
   margin: 100px 20px 0 0px;
 `;
-const CodeBlock = styled.div`
-  height: 100%;
-  width: 50%;
-  padding: 50px 20px 20px 20px;
-  justify-content: space-between;
-`;
-const CopyBlockSections = styled.div`
-  padding: 0 0 20px 0;
-`;
+// const CodeBlock = styled.div`
+//   height: 100%;
+//   width: 50%;
+//   padding: 50px 20px 20px 20px;
+//   justify-content: space-between;
+// `;
+// const CopyBlockSections = styled.div`
+//   padding: 0 0 20px 0;
+// `;
 const Text = styled.div`
   padding: 80px 0 0 0;
   background-color: black;
   text-align: right;
   height: 80px;
 `;
-const ResultText = styled.h6`
-  padding: 10px 0 0px 20px;
-  width: 350px;
-  color: white;
-`;
+// const ResultText = styled.h6`
+//   padding: 10px 0 0px 20px;
+//   width: 350px;
+//   color: white;
+// `;
 export default Cuniquelabels;

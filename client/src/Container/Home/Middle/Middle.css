@@ -1,82 +1,101 @@
-  h1 {
-    font-family: "Rubik", sans-serif;
-    font-size: 30px;
-    padding: 10px 20px;
-    color: #ffffff;
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+  color: #ffffff;
+}
+p {
+  color: #ffffff;
+}
+.Title-logo {
+  font-size: 4rem;
+}
+.Title-Container {
+  display: flex;
+  flex-direction: column;
+  height: 25rem;
+  padding-top: 8rem;
+}
+.Title {
+  width: 100%;
+  text-align: center;
+}
+.Title-logo {
+  color: #ffffff;
+}
+.year {
+  color: #ffffff;
+}
+.smart {
+  color: #e78309;
+}
+.india {
+  color: #ffffff;
+}
+.hack {
+  color: #01a33a;
+}
+.crb-logo {
+  text-align: center;
+  margin: 3rem 0;
+  /* color: #030f18; */
+}
+
+.text-container h4{
+  margin: 4rem 0 3rem 0;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 2rem;
+}
+.action-buttons-1,
+.action-buttons-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-global {
+  background: #6f747d;
+  background-image: -webkit-linear-gradient(top, #6f747d, #6f747d);
+  background-image: -moz-linear-gradient(top, #6f747d, #6f747d);
+  background-image: -ms-linear-gradient(top, #6f747d, #6f747d);
+  background-image: -o-linear-gradient(top, #6f747d, #6f747d);
+  background-image: linear-gradient(to bottom, #6f747d, #6f747d);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 1rem;
+  font-family: Arial;
+  color: #030f18;
+  font-size: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+  text-decoration: none;
+  margin: 3rem 5rem;
+}
+
+.btn-global:hover {
+  background: #414449;
+  background-image: -webkit-linear-gradient(top, #414449, #414449);
+  background-image: -moz-linear-gradient(top, #414449, #414449);
+  background-image: -ms-linear-gradient(top, #414449, #414449);
+  background-image: -o-linear-gradient(top, #414449, #414449);
+  background-image: linear-gradient(to bottom, #414449, #414449);
+  text-decoration: none;
+}
+
+@media (max-width: 998px) {
+  html {
+    font-size: 55%;
   }
-  p{
-    color: #ffffff;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 44%;
   }
-  .Title-Container {
-    display: flex;
-    flex-direction: column;
-    height: 250px;
-    padding-top: 80px;
-  }
-  .Title {
-    width: 100%;
-    text-align: center;
-  }
-  .Title-logo {
-    color: #ffffff;
-  }
-  .year {
-    color: #ffffff;
-  }
-  .smart {
-    color: #e78309;
-  }
-  .india {
-    
-    color: #ffffff;
-  }
-  .hack{
-    color: #01a33a;
-  }
-  .crb-logo{
-    text-align: center;
-    margin: 30px 0;
-    /* color: #030f18; */
-  }
-  
-  .text-container {
-    margin: 40px 0 30px 0;
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-    
-  }
-  .action-buttons-1, .action-buttons-2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .btn-global {
-    background: #6f747d;
-    background-image: -webkit-linear-gradient(top, #6f747d, #6f747d);
-    background-image: -moz-linear-gradient(top, #6f747d, #6f747d);
-    background-image: -ms-linear-gradient(top, #6f747d, #6f747d);
-    background-image: -o-linear-gradient(top, #6f747d, #6f747d);
-    background-image: linear-gradient(to bottom, #6f747d, #6f747d);
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    border-radius: 10px;
-    font-family: Arial;
-    color: #030f18;
-    font-size: 20px;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-    margin: 30px 50px;
-  }
-  
-  .btn-global:hover {
-    background: #414449;
-    background-image: -webkit-linear-gradient(top, #414449, #414449);
-    background-image: -moz-linear-gradient(top, #414449, #414449);
-    background-image: -ms-linear-gradient(top, #414449, #414449);
-    background-image: -o-linear-gradient(top, #414449, #414449);
-    background-image: linear-gradient(to bottom, #414449, #414449);
-    text-decoration: none;
-  }
-  
+}
+
+

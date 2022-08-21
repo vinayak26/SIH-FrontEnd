@@ -1,12 +1,11 @@
 .home-container {
     height: 100vh;
     justify-content: space-between;
-    min-height: 670px;
+    height: 100vh;
     background-image: url("../Home/calculate.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 670px;
   }

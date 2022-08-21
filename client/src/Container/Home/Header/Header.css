@@ -1,26 +1,32 @@
 .header-container {
   display: flex;
   justify-content: center;
-  height: 149px;
+  height: 14.9rem;
+  flex-direction: row;
 }
 .header-parent {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100%;
-  width: 70%;
+  width: 100%;
 }
 .header-logo {
-  font-size: 25px;
-  font-family: "Poppins bold";
-  color: var(--white);
+  font-family: "Rubik", sans-serif;
+  font-size: 3rem;
+  position: fixed;
+  width: 100%;
+  padding-left: 3rem;  
 }
 .header-options {
   display: flex;
   align-items: center;
+  z-index: 1;
+  width: 100%;
+  padding-left:100rem;
 }
 .header-option {
-  font-size: 16px;
+  font-size: 1.6rem;
   cursor: pointer;
   font-weight: 600;
 }
@@ -29,7 +35,7 @@
   color: var(--white);
 }
 .header-option-seperator {
-  margin: 0 50px 0 0;
+  margin: 0 5rem 0 0;
   color: var(--white);
 }
 .selected-header-option {
@@ -41,13 +47,13 @@
     width: 80%;
   }
 }
-@media only screen and (max-width: 970px) {
+@media only screen and (max-width: 998px) {
   .header-hamburger {
     display: block;
   }
   .header-parent {
     width: 100%;
-    padding: 0 40px;
+    padding: 0 4rem;
     position: relative;
   }
   .header-options {
@@ -56,7 +62,7 @@
     position: absolute;
     left: -100%;
     transition: all 0.8s ease-out;
-    top: 0px;
+    top: 0rem;
     height: 100vh;
     width: 100%;
     justify-content: space-around;
@@ -71,13 +77,18 @@
     color: var(--white);
   }
   .header-hamburger-bars {
-    font-size: 30px;
+    font-size: 3rem;
     cursor: pointer;
-    margin: 0px 10px;
+    margin: 0rem 1rem;
     color: var(--white);
   }
   .show-hamburger-options {
     left: 0;
     opacity: 1;
+  }
+}
+@media(max-width:998rem){
+  html {
+    font-size: 55%;
   }
 }

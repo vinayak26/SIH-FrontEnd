@@ -1,12 +1,12 @@
 import React from "react";
-import { CopyBlock, googlecode } from "react-code-blocks";
+// import { CopyBlock, googlecode } from "react-code-blocks";
 import Chart from "react-apexcharts";
-import {
-  hotencoding,
-  hotencoding2,
-  hotencoding3,
-  hotencoding4,
-} from "../../utilities/codes";
+// import {
+//   hotencoding,
+//   hotencoding2,
+//   hotencoding3,
+//   hotencoding4,
+// } from "../../utilities/codes";
 import styled from "styled-components";
 
 function Photencoding() {
@@ -58,7 +58,7 @@ function Photencoding() {
             }}
           />
         </GraphBlock>
-        <CodeBlock>
+        {/* <CodeBlock>
           <CopyBlockSections>
             <CopyBlock
               text={hotencoding}
@@ -94,7 +94,7 @@ function Photencoding() {
               theme={googlecode}
             />
           </CopyBlockSections>
-        </CodeBlock>
+        </CodeBlock> */}
       </Container>
     </div>
   );
@@ -105,32 +105,34 @@ const Container = styled.div`
   background-color: black;
   height: 980px;
   background-color: black;
+  width:100%;
 `;
 const GraphBlock = styled.div`
   height: 60%;
   width: 60%;
-  margin: 100px 20px 0 0px;
+  margin: 100px 0px 0 550px;
+
 `;
-const CodeBlock = styled.div`
-  height: 100%;
-  width: 50%;
-  padding: 50px 20px 20px 20px;
-  justify-content: space-between;
-`;
-const CopyBlockSections = styled.div`
-  padding: 0 0 20px 0;
-`;
+// const CodeBlock = styled.div`
+//   height: 100%;
+//   width: 50%;
+//   padding: 50px 20px 20px 20px;
+//   justify-content: space-between;
+// `;
+// const CopyBlockSections = styled.div`
+//   padding: 0 0 20px 0;
+// `;
 const Text = styled.div`
   padding: 80px 0 0 0;
   background-color: black;
   text-align: right;
   height: 80px;
 `;
-const ResultText = styled.h6`
-  padding: 10px 0 0px 20px;
-  width: 350px;
-  color: white;
-`;
+// const ResultText = styled.h6`
+//   padding: 10px 0 0px 20px;
+//   width: 350px;
+//   color: white;
+// `;
 
 
 export default Photencoding;

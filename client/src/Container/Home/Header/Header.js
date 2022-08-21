@@ -62,16 +62,18 @@ export default function Header() {
       className="header-container"
       onClick={() => setShowHeaderOptions(!showHeaderOptions)}
     >
+      
       <div className="header-parent">
+      <div className="header-logo">
+        <span>TEAM WALLOP</span>
+      </div>
         <div
           className="header-hamburger"
           onClick={() => setShowHeaderOptions(!showHeaderOptions)}
         >
           <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
         </div>
-        <div className="header-logo">
-          <span>TEAM WALLOP</span>
-        </div>
+
         <div
           className={
             showHeaderOptions
@@ -85,4 +87,3 @@ export default function Header() {
     </div>
   );
 }
-

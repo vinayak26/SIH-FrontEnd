@@ -1,17 +1,17 @@
 import React from 'react'
-import { CopyBlock, googlecode } from "react-code-blocks";
-import Chart from "react-apexcharts";
-import { handelingoutliners,removingoutliners } from "../../utilities/codes";
+// import { CopyBlock, googlecode } from "react-code-blocks";
+// import Chart from "react-apexcharts";
+// import { handelingoutliners,removingoutliners } from "../../utilities/codes";
 import styled from "styled-components";
 
 function Houtliners() {
   return (
     <div>        
       <Text>
-    <h1>Handling Outliners</h1>
+    <h1>Handling Outliers</h1>
   </Text> 
 <Container>
-<GraphBlock>
+{/* <GraphBlock>
     <Chart
       type="boxPlot"
       series={[
@@ -68,7 +68,7 @@ function Houtliners() {
         theme={googlecode}
       />
     </div>
-  </CodeBlock>
+  </CodeBlock> */}
 
 </Container></div>
   )
@@ -80,10 +80,10 @@ const Container = styled.div`
   height:100vh;
 `;
 
-const CodeBlock = styled.div`
-  width: 50%;
-  padding: 150px 20px 20px 20px;
-`;
+// const CodeBlock = styled.div`
+//   width: 50%;
+//   padding: 150px 20px 20px 20px;
+// `;
 
 const Text = styled.div`
 
@@ -93,15 +93,15 @@ const Text = styled.div`
   height:80px;
 `;
 
-const ResultText = styled.div`
-  padding: 10px 0 0px 20px;
-  width: 200px;
-  color: white;
-`;
+// const ResultText = styled.div`
+//   padding: 10px 0 0px 20px;
+//   width: 200px;
+//   color: white;
+// `;
 
-const GraphBlock = styled.div`
-  width: 50%;
-  margin: 150px 20px 20px 20px;
-`;
+// const GraphBlock = styled.div`
+//   width: 50%;
+//   margin: 150px 20px 20px 20px;
+// `;
 
 export default Houtliners

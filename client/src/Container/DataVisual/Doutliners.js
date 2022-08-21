@@ -1,17 +1,17 @@
 import React from "react";
-import { CopyBlock, googlecode } from "react-code-blocks";
-import Chart from "react-apexcharts";
-import { detectingoutliners } from "../../utilities/codes";
+// import { CopyBlock, googlecode } from "react-code-blocks";
+// import Chart from "react-apexcharts";
+// import { detectingoutliners } from "../../utilities/codes";
 import styled from "styled-components";
 
 function Doutliners() {
   return (
     <div>
         <Text>
-          <h1>Detecting Outliners(Using BoxPlot)</h1>
+          <h1>Detecting Outliers(Using BoxPlot)</h1>
         </Text> 
       <Container>       
-        <CodeBlock>
+        {/* <CodeBlock>
           <div className="code-container">
             <CopyBlock
               text={detectingoutliners}
@@ -61,7 +61,7 @@ function Doutliners() {
               colors: ["#FF4A4A", "#FEB019"],
             }}
           />
-        </GraphBlock>
+        </GraphBlock> */}
       </Container>
     </div>
   );
@@ -74,10 +74,10 @@ const Container = styled.div`
   height:100vh;
 `;
 
-const CodeBlock = styled.div`
-  width: 50%;
-  padding: 250px 20px 20px 20px;
-`;
+// const CodeBlock = styled.div`
+//   width: 50%;
+//   padding: 250px 20px 20px 20px;
+// `;
 
 const Text = styled.div`
   padding: 50px 0 0 0;
@@ -85,15 +85,15 @@ const Text = styled.div`
   height:80px
 `;
 
-const ResultText = styled.div`
-  padding: 10px 0 20px 20px;
-  width: 200px;
-  color: white;
-`;
+// const ResultText = styled.div`
+//   padding: 10px 0 20px 20px;
+//   width: 200px;
+//   color: white;
+// `;
 
-const GraphBlock = styled.div`
-  width: 50%;
-  margin: 180px 20px 20px 20px;
-`;
+// const GraphBlock = styled.div`
+//   width: 50%;
+//   margin: 180px 20px 20px 20px;
+// `;
 
 export default Doutliners;
