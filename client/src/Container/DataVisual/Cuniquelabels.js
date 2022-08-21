@@ -23,6 +23,8 @@ function Cuniquelabels() {
         <GraphBlock>
           <Chart
             type="bar"
+            height={500}
+            width={700}
             series={[
               {
                 data: [40, 662, 17, 23, 5],
@@ -57,6 +59,20 @@ function Cuniquelabels() {
                   show: false,
                 },
               },
+              responsive: [
+                {
+                  breakpoint: 1000,
+                  options: {
+                    chart: {
+                      height: '250',
+                      width: '250'
+                    },
+                    legend: {
+                      position: "bottom"
+                    }
+                  }
+                }
+              ]
             }}
           />
         </GraphBlock>
@@ -131,7 +147,11 @@ const Container = styled.div`
 const GraphBlock = styled.div`
   height: 60%;
   width: 60%;
-  padding: 100px 20px 0 0px;
+  padding: 120px 20px 0 0px;
+
+  @media (max-width: 998px){
+    
+  }
 `;
 // const CodeBlock = styled.div`
 //   height: 100%;

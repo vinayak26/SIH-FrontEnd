@@ -56,13 +56,15 @@ export default function MLcomp() {
                     colors: ['transparent']
                   },
               
-              yaxis: {
+              xaxis: {
                 labels:{
+                  show:false,
                     
                     style:{
                         colors:['#ffffff']
                     }
                 },
+
 
                 // categories: [
                 //   "Random Forest",
@@ -71,14 +73,30 @@ export default function MLcomp() {
                 //   "SVM",
                 //   "Linear Regression",
                 // ],
+                
               },
               grid: {
                 padding: {
                   left: 60,
                   right: 60,
                 }
-              }
+              },
+              responsive: [
+                {
+                  breakpoint: 1000,
+                  options: {
+                    chart: {
+                      height: '250',
+                      width: '250'
+                    },
+                    legend: {
+                      show:false
+                    }
+                  }
+                }
+              ]
             }}
+            
           />
           </GraphBlock>
           </Container>
