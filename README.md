@@ -9,5 +9,5 @@ pip install -r requirements.txt </br>
 flask run </br>
 
 # Note:
-- You have to download the yolov3.weight file. You can also download it from here YOLOv3 @ Google-Drive || YOLOv4 @ Google-Drive
+- You have to download the yolov3.weight file. You can also download it from here [YOLOv3 @ Google-Drive](https://drive.google.com/drive/folders/1nN49gRqt5HvuMptfc0wRVcuLwiNmMD6u)
 - Paste all downloaded files as it is in "DL_Based_RealTime_Distance" folder (replace if files already present with same name)
