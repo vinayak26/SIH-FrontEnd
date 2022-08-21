@@ -6,12 +6,20 @@ import {
   transmissions,
   vehicleclasses,
   fueltypes,
-} from "../../utills/index";
-import TypeAnimation from "react-type-animation";
+} from "../../utilities/index";
+import ScrollService from "../../utilities/ScrollService";
+import Animations from "../../utilities/Animations";
 
 class Calculate extends Component {
   constructor(props) {
     super(props);
+    let fadeInScreenHandler = (screen) => {
+      if (screen.fadeInScreen !== this.props.id) return;
+      Animations.animations.fadeInScreen(this.props.id);
+    };
+  
+     const fadeInSubscription =
+      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     this.state = {
       isLoading: false,
@@ -78,43 +86,43 @@ class Calculate extends Component {
     }
 
     var MODELS = [];
-    for (var i = 0; i < models.length; i++) {
+    for (var j = 0; j < models.length; j++) {
       MODELS.push(
-        <option key={models[i]} value={models[i]}>
-          {models[i]}
+        <option key={models[j]} value={models[j]}>
+          {models[j]}
         </option>
       );
     }
 
     var VEHICLECLASSES = [];
-    for (var i = 0; i < vehicleclasses.length; i++) {
+    for (var k = 0; k < vehicleclasses.length; k++) {
       VEHICLECLASSES.push(
-        <option key={vehicleclasses[i]} value={vehicleclasses[i]}>
-          {vehicleclasses[i]}
+        <option key={vehicleclasses[k]} value={vehicleclasses[k]}>
+          {vehicleclasses[k]}
         </option>
       );
     }
 
     var TRANSMISSIONS = [];
-    for (var i = 0; i < transmissions.length; i++) {
+    for (var l = 0; l < transmissions.length; l++) {
       TRANSMISSIONS.push(
-        <option key={transmissions[i]} value={transmissions[i]}>
-          {transmissions[i]}
+        <option key={transmissions[l]} value={transmissions[l]}>
+          {transmissions[l]}
         </option>
       );
     }
 
     var FUELTYPES = [];
-    for (var i = 0; i < fueltypes.length; i++) {
+    for (var m = 0; m < fueltypes.length; m++) {
       FUELTYPES.push(
-        <option key={fueltypes[i]} value={fueltypes[i]}>
-          {fueltypes[i]}
+        <option key={fueltypes[m]} value={fueltypes[m]}>
+          {fueltypes[m]}
         </option>
       );
     }
 
     return (
-      <div className="Calculate-Container">
+      <div className="Calculate-Container" id={this.props.id || ""}>
         <div className="calculate-title">
           <h1>CARBON FOOTPRINT CALCULATOR</h1>
         </div>

@@ -8,7 +8,7 @@ import {
   findingcorrelation5,
   findingcorrelation6,
   findingcorrelation7
-} from "../../utills/codes";
+} from "../../utilities/codes";
 import styled from "styled-components";
 
 function Fcorreraltion() {

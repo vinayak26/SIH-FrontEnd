@@ -1,7 +1,7 @@
 import React from 'react'
 import { CopyBlock, googlecode } from "react-code-blocks";
 import Chart from "react-apexcharts";
-import { handelingoutliners,removingoutliners } from "../../utills/codes";
+import { handelingoutliners,removingoutliners } from "../../utilities/codes";
 import styled from "styled-components";
 
 function Houtliners() {

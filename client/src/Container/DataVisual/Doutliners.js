@@ -1,7 +1,7 @@
 import React from "react";
 import { CopyBlock, googlecode } from "react-code-blocks";
 import Chart from "react-apexcharts";
-import { detectingoutliners } from "../../utills/codes";
+import { detectingoutliners } from "../../utilities/codes";
 import styled from "styled-components";
 
 function Doutliners() {

@@ -7,7 +7,7 @@ import {
   uniquelables3,
   uniquelables4,
   uniquelables5,
-} from "../../utills/codes";
+} from "../../utilities/codes";
 import styled from "styled-components";
 
 function Cuniquelabels() {

@@ -6,7 +6,7 @@ import {
   hotencoding2,
   hotencoding3,
   hotencoding4,
-} from "../../utills/codes";
+} from "../../utilities/codes";
 import styled from "styled-components";
 
 function Photencoding() {
@@ -14,8 +14,7 @@ function Photencoding() {
     <div>
       <Text>
         <h1>
-          Calculating Number Of Unique Labels Per Feature To Perform One Hot
-          Encoding
+          Performing One-Hot-encoding-TOP-X for Lable Encoding & Dimensionality Reduction
         </h1>
       </Text>
       <Container>

@@ -39,7 +39,7 @@ class ExcelView extends Component {
         if (event.target.files.length) {
             let fileObj = event.target.files[0];
             let fileName = fileObj.name;
-
+            console.log(fileObj)
 
             if (fileName.slice(fileName.lastIndexOf('.') + 1) === "xlsx") {
                 this.setState({
