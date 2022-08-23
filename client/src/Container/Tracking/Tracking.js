@@ -91,7 +91,7 @@ class Tracking extends Component {
                 <input
                 className="inputbox"
                   type="text"
-                  name="mileage"
+                  name="targetlocation"
                   value={formData.targetlocation}
                   onChange={this.handleChange}
                   placeholder="Enter Target Location"
