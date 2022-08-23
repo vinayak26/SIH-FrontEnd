@@ -17,9 +17,9 @@ class Tracking extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        currentlocation: 0,
-        targetlocation: 0,
-      },
+        currentlocation: "",
+        targetlocation: "",
+      }, 
       result: "",
     };
   }
@@ -37,7 +37,7 @@ class Tracking extends Component {
   handlePredictClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch("http://127.0.0.1:5000/prediction/", {
+    fetch("http://127.0.0.1:5002/distance/", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -76,7 +76,7 @@ class Tracking extends Component {
                 <input
                   className="inputbox"
                   type="text"
-                  name="enginesize"
+                  name="currentlocation"
                   value={formData.currentlocation}
                   onChange={this.handleChange}
                   placeholder="Enter Current Location"
