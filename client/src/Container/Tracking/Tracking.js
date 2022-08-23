@@ -17,7 +17,7 @@ class Tracking extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        curentlocation: 0,
+        currentlocation: 0,
         targetlocation: 0,
       },
       result: "",
@@ -77,9 +77,9 @@ class Tracking extends Component {
                   className="inputbox"
                   type="text"
                   name="enginesize"
-                  value={formData.enginesize}
+                  value={formData.currentlocation}
                   onChange={this.handleChange}
-                  placeholder="Engine size of your car"
+                  placeholder="Enter Current Location"
                 ></input>
               </label>
             </div>
@@ -92,9 +92,9 @@ class Tracking extends Component {
                 className="inputbox"
                   type="text"
                   name="mileage"
-                  value={formData.mileage}
+                  value={formData.targetlocation}
                   onChange={this.handleChange}
-                  placeholder="Engine Mileage of your car"
+                  placeholder="Enter Target Location"
                 ></input>
               </label>
             </div>
