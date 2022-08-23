@@ -1,5 +1,6 @@
 import Home from "../Container/Home/Home";
 import Calculate from "../Container/Calculate/Calculate";
+import Tracking from "../Container/Tracking/Tracking";
 import DataVisual from "../Container/DataVisual/DataVisual";
 
 
@@ -11,6 +12,10 @@ export const TOTAL_SCREENS = [
     {
       screen_name: "Calculate",
       component: Calculate,  
+    },
+    {
+      screen_name: "Tracking",
+      component: Tracking,  
     },
     {
       screen_name: "DataVisual",

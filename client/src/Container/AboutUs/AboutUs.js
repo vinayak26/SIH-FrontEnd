@@ -1,10 +1,8 @@
-import React from "react";
-import "./AboutUs.css";
+import React from 'react'
 
 export default function AboutUs() {
   return (
-    <div>
-    </div>
-    
-  );
+    <div>AboutUs</div>
+  )
 }
+
