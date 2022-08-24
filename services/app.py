@@ -66,7 +66,8 @@ class MainClass(Resource):
                 model_script.one_hot_encoding_top_x(Input, variable, top_x_labels)
 
             output = regressor.predict([Input.iloc[-1, :]])
-            prediction_text = f"CO2 Emission of the vehicle is : {output}"
+            # prediction_text = f"CO2 Emission of the vehicle is : {output}"
+            prediction_text = f"{output[0]}"
 
             response = jsonify({
                 "statusCode": 200,
