@@ -20,7 +20,7 @@ class Tracking extends Component {
         currentlocation: "",
         targetlocation: "",
       }, 
-      result: "",
+      result_track_track: "",
     };
   }
 
@@ -48,20 +48,20 @@ class Tracking extends Component {
       .then((response) => response.json())
       .then((response) => {
         this.setState({
-          result: response.result,
+          result_track: response.result_track,
           isLoading: false,
         });
       });
   };
 
   handleCancelClick = (event) => {
-    this.setState({ result: "" });
+    this.setState({ result_track: "" });
   };
 
   render() {
     const isLoading = this.state.isLoading;
     const formData = this.state.formData;
-    const result = this.state.result;
+    const result_track = this.state.result_track;
 
     return (
       <div className="Tracking-Container" id={this.props.id || ""}>
@@ -105,7 +105,7 @@ class Tracking extends Component {
               disabled={isLoading}
               onClick={!isLoading ? this.handlePredictClick : null}
             >
-              {isLoading ? "Making prediction" : "Predict Result"}
+              {isLoading ? "Making prediction" : "Predict result_track"}
             </button>
 
             <button
@@ -117,8 +117,8 @@ class Tracking extends Component {
             </button>
           </div>
           <div className="output-fields">
-            {result === "" ? null : (
-              <h5 className="result-text">{result}</h5>
+            {result_track === "" ? null : (
+              <h5 className="result_track-text">{result_track}</h5>
             )}
           </div>
         </div>
