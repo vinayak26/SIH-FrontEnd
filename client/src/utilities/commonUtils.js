@@ -2,6 +2,7 @@ import Home from "../Container/Home/Home";
 import Calculate from "../Container/Calculate/Calculate";
 import Tracking from "../Container/Tracking/Tracking";
 import DataVisual from "../Container/DataVisual/DataVisual";
+import AboutUs from "../Container/AboutUs/AboutUs";
 
 
 export const TOTAL_SCREENS = [
@@ -20,7 +21,11 @@ export const TOTAL_SCREENS = [
     {
       screen_name: "DataVisual",
       component: DataVisual,  
-    }
+    },
+    
+    {  screen_name: "AboutUs",
+      component: AboutUs,  
+    },
 ];
 export const GET_SCREEN_INDEX = (screen_name) => {
     if (!screen_name) return -1;
