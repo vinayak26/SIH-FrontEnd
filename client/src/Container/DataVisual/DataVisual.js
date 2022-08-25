@@ -21,8 +21,8 @@ export default function DataVisual(props) {
         {/* <Doutliners/>
         <Houtliners/>
         <Fcorreraltion/> */}
-        <Cuniquelabels/>
-        <Photencoding/>
+        {/* <Cuniquelabels/>
+        <Photencoding/> */}
         <MLcomp/>
     </div>
   )

@@ -252,7 +252,7 @@ class Calculate extends Component {
           </div>
           <div className="output-fields">
             {result === "" ? null : (
-              <h5 className="result-text">{result}</h5>
+              <h5 className="result-text">CO2 Emitted: {result} gm/km</h5>
             )}
           </div>
         </div>

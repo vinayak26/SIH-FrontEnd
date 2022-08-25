@@ -23,9 +23,9 @@ export const TOTAL_SCREENS = [
       component: DataVisual,  
     },
     
-    {  screen_name: "AboutUs",
-      component: AboutUs,  
-    },
+    // {  screen_name: "AboutUs",
+    //   component: AboutUs,  
+    // },
 ];
 export const GET_SCREEN_INDEX = (screen_name) => {
     if (!screen_name) return -1;
