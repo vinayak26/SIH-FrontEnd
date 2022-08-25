@@ -106,7 +106,7 @@ export default function MLcomp() {
 
 const Text = styled.div`
 padding: 80px 0 0 0;
-background-color: black;
+background-color: #ACBDC5;
 text-align: right;
 height: 80px;
 `;
@@ -117,7 +117,7 @@ const GraphBlock = styled.div`
 `
 const Container = styled.div`
 display: flex;
-  background-color: #030f18;
+  background-color: #52686A;
   height: 100vh;
   width:100%;
 `
