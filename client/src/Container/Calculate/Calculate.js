@@ -34,6 +34,7 @@ class Calculate extends Component {
         mileage: 0,
       },
       result: "",
+      predictionResult: [],
     };
   }
 
@@ -63,11 +64,18 @@ class Calculate extends Component {
         this.setState({
           result: response.result,
           isLoading: false,
+          predictionResult: this.state.predictionResult.concat(response.result)
         });
       });
+      if(this.state.predictionResult.length > 6)  this.setState({predictionResult: this.state.predictionResult.slice(1)})
+    console.log(this.state.predictionResult)
   };
 
   handleCancelClick = (event) => {
+    // if(this.state.predictionResult.length > 6)  this.setState({predictionResult: this.state.predictionResult.slice(1)})
+    // console.log(this.state.predictionResult)
+    this.setState({predictionResult: []})
+    console.log(this.state.predictionResult)
     this.setState({ result: "" });
   };
 
