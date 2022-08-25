@@ -61,12 +61,15 @@ class Calculate extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
+        // console.log(response)
         this.setState({
           result: response.result,
           isLoading: false,
           predictionResult: this.state.predictionResult.concat(response.result)
+          
         });
       });
+      
       if(this.state.predictionResult.length > 6)  this.setState({predictionResult: this.state.predictionResult.slice(1)})
     console.log(this.state.predictionResult)
   };
@@ -137,7 +140,7 @@ class Calculate extends Component {
         <div className="input-container">
           <div className="input-container-row-1">
           <div>
-              <label>COMPANY:</label>
+              <label className="lable-text">COMPANY:</label>
               <select
                 className="inputfield"
                 value={formData.company}

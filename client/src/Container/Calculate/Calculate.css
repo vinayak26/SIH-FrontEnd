@@ -3,24 +3,30 @@ html {
 }
 
 .Calculate-Container {
-  /* background-image: url("../Calculate/Calculate3.png"); 
+  background-image: url("../Calculate/calculate.png"); 
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
+  
 }
 .calculate-title h1 {
   font-family: "Rubik-semibold", sans-serif;
   font-size: 3rem;
   padding: 6rem 2rem;
-  color: #ffffff;
+  color: #000;
+  font-weight: 700;
   text-align: center;
   width: 100%;
 }
 label {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  color: black;
+  /* font-weight: bold; */
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
 }
 
 .inputfield{

@@ -17,24 +17,26 @@ export default function MLcomp() {
             series={[
               {
                 name: 'Random Forest',
-              data: [98.60,98.84,98.02]
-              },
-              {
-                name: 'Decision Tree',
-              data: [98.90,98.44,97.51]
+              data: [98.90,99.26],
               },
               {
                 name: 'KNN',
-              data: [95.08,95.88,95.55]
-              },
-              {
-                name: 'SVM',
-              data: [92.81,91.27,91.03]
+              data: [96.99,97.24]
               },
               {
                 name: 'Linear Regression',
-              data: [96.11,95.38,89.38]
-              }
+              data: [96.51,94.99]
+              },
+              {
+                name: 'Decision Tree',
+              data: [98.96,98.81]
+              },
+              
+              {
+                name: 'SVM',
+              data: [93.94,91.61]
+              },
+              
             ]}
             options={{
                 theme:{
@@ -58,7 +60,7 @@ export default function MLcomp() {
               
               xaxis: {
                 labels:{
-                  show:false,
+                  show:true,
                     
                     style:{
                         colors:['#ffffff']
@@ -66,13 +68,11 @@ export default function MLcomp() {
                 },
 
 
-                // categories: [
-                //   "Random Forest",
-                //   "Decision Tree",
-                //   "KNN Models",
-                //   "SVM",
-                //   "Linear Regression",
-                // ],
+                categories: [
+                  "Validation Accuracy",
+                  "Test Accuracy",
+            ,
+                ],
                 
               },
               grid: {

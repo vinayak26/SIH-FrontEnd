@@ -1,5 +1,5 @@
-import React from 'react'
-import "./Middle.css"
+import React from "react";
+import "./Middle.css";
 import TypeAnimation from "react-type-animation";
 
 export default function Middle() {
@@ -9,19 +9,13 @@ export default function Middle() {
         <div className="Title">
           <h1 className="Title-logo">
             <span className="smart">SMART</span>
-            <span className="india"> INDIA </span><span className="hack">HACKATHON</span>
+            <span className="india"> INDIA </span>
+            <span className="hack">HACKATHON</span>
             <span className="year"> 2022</span>
           </h1>
         </div>
         <div className="Project-logo">
-          <h1 className="crb-logo">
-            <TypeAnimation
-            className="crb-logo"
-              sequence={["CARBON FOOTPRINT EMISSION CALCULATOR", 6000, ""]}
-              speed={45}
-              repeat={Infinity}
-            />
-          </h1>
+          <h1 className="crb-logo">CARBON FOOTPRINT EMISSION CALCULATOR</h1>
         </div>
         <div className="text-container">
           <h4>
@@ -37,5 +31,5 @@ export default function Middle() {
         </div> */}
       </div>
     </div>
-  )
+  );
 }
