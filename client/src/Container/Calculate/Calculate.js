@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "./Calculate.css";
 import {
   companies,
@@ -9,48 +9,31 @@ import {
 } from "../../utilities/index";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+function Calculate() {
+  const [isLoading, setloading] = useState(false)
+  const [formData, setformdata] = useState({
+  Make: "", 
+  Model: "", 
+  Class: "", 
+  Engine_Size: 0,
+  Transmission: "",
+  Fuel_Type: "",
+  Mileage_KmpL: 0})
 
-class Calculate extends Component {
-  constructor(props) {
-    super(props);
-    let fadeInScreenHandler = (screen) => {
-      if (screen.fadeInScreen !== this.props.id) return;
-      Animations.animations.fadeInScreen(this.props.id);
-    };
-  
-     const fadeInSubscription =
-      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  const [result, setresult] = useState("")
+  const [predictionResult, setarray] = useState([])
 
-    this.state = {
-      isLoading: false,
-      formData: {
-        // sepalWidth: 200,
-        company: "",
-        model: "",
-        vehicleclass: "",
-        enginesize: 0,
-        transmission: "",
-        fueltype: "",
-        mileage: 0,
-      },
-      result: "",
-      predictionResult: [],
-    };
-  }
-
-  handleChange = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
-    var formData = this.state.formData;
-    formData[name] = value;
-    this.setState({
-      formData,
-    });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setformdata(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    // setformdata(prevFormData => prevFormData.name = event.target.value)
   };
 
-  handlePredictClick = (event) => {
-    const formData = this.state.formData;
-    this.setState({ isLoading: true });
+const handlePredictClick = (event) => {
+  setloading(prevLoad => ({ ...prevLoad, isloading: true }))
     fetch("http://127.0.0.1:5000/prediction/", {
       headers: {
         Accept: "application/json",
@@ -61,201 +44,166 @@ class Calculate extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
-        this.setState({
-          result: response.result,
-          isLoading: false,
-          predictionResult: this.state.predictionResult.concat(response.result)
-        });
+        setarray(current => [...current, response.result])
+        if (predictionResult.length > 6) setarray([])
+        setresult(response.result)
+        setloading(false)
+        // console.log(predictionResult)
       });
-      if(this.state.predictionResult.length > 6)  this.setState({predictionResult: this.state.predictionResult.slice(1)})
-    console.log(this.state.predictionResult)
   };
 
-  handleCancelClick = (event) => {
-    // if(this.state.predictionResult.length > 6)  this.setState({predictionResult: this.state.predictionResult.slice(1)})
-    // console.log(this.state.predictionResult)
-    this.setState({predictionResult: []})
-    console.log(this.state.predictionResult)
-    this.setState({ result: "" });
+  const handleCancelClick = (event) => {
+    setresult("")
   };
 
-  render() {
-    const isLoading = this.state.isLoading;
-    const formData = this.state.formData;
-    const result = this.state.result;
-
-    var COMPANIES = [];
-    for (var i = 0; i < companies.length; i++) {
-      COMPANIES.push(
-        <option key={companies[i]} value={companies[i]}>
-          {companies[i]}
-        </option>
-      );
-    }
-
-    var MODELS = [];
-    for (var j = 0; j < models.length; j++) {
-      MODELS.push(
-        <option key={models[j]} value={models[j]}>
-          {models[j]}
-        </option>
-      );
-    }
-
-    var VEHICLECLASSES = [];
-    for (var k = 0; k < vehicleclasses.length; k++) {
-      VEHICLECLASSES.push(
-        <option key={vehicleclasses[k]} value={vehicleclasses[k]}>
-          {vehicleclasses[k]}
-        </option>
-      );
-    }
-
-    var TRANSMISSIONS = [];
-    for (var l = 0; l < transmissions.length; l++) {
-      TRANSMISSIONS.push(
-        <option key={transmissions[l]} value={transmissions[l]}>
-          {transmissions[l]}
-        </option>
-      );
-    }
-
-    var FUELTYPES = [];
-    for (var m = 0; m < fueltypes.length; m++) {
-      FUELTYPES.push(
-        <option key={fueltypes[m]} value={fueltypes[m]}>
-          {fueltypes[m]}
-        </option>
-      );
-    }
-
-    return (
-      <div className="Calculate-Container" id={this.props.id || ""}>
-        <div className="calculate-title">
-          <h1>CARBON FOOTPRINT CALCULATOR</h1>
-        </div>
-        <div className="input-container">
-          <div className="input-container-row-1">
-          <div>
-              <label>COMPANY:</label>
-              <select
-                className="inputfield"
-                value={formData.company}
-                name="company"
-                placeholder="Select Model..."
-                onChange={this.handleChange}
-              >
-                {COMPANIES}
-              </select>
-            </div>
-            <br></br>
-            <div>
-              <label>MODEL:</label>
-              <select
-                className="inputfield"
-                value={formData.model}
-                name="model"
-                placeholder="Select Model..."
-                onChange={this.handleChange}
-              >
-                {MODELS}
-              </select>
-            </div>
-            <br></br>
-            <div>
-              <label>VEHICLE CLASS:</label>
-              <select
-                className="inputfield"
-                value={formData.vehicleclass}
-                name="vehicleclass"
-                placeholder="Select Vehicle Class"
-                onChange={this.handleChange}
-              >
-                {VEHICLECLASSES}
-              </select>
-            </div>
-            <br></br>
-            <div>
-              <label className="inputfield">
-                Enter Engine Size:
-                <input
-                  className="inputbox"
-                  type="text"
-                  name="enginesize"
-                  value={formData.enginesize}
-                  onChange={this.handleChange}
-                  placeholder="Engine size of your car"
-                ></input>
-              </label>
-            </div>
-          </div>
-          <div className="input-container-row-2">
-            <div>
-              <label>Transmission:</label>
-              <select
-                className="inputfield"
-                value={formData.transmission}
-                name="transmission"
-                placeholder="Select Transmission"
-                onChange={this.handleChange}
-              >
-                {TRANSMISSIONS}
-              </select>
-            </div>
-            <br></br>
-            <div>
-              <label>Fuel Type:</label>
-              <select
-                className="inputfield"
-                value={formData.fueltype}
-                name="fueltype"
-                placeholder="Select Fueltypes"
-                onChange={this.handleChange}
-              >
-                {FUELTYPES}
-              </select>
-            </div>
-            <br></br>
-            <div>
-              <label className="inputfield">
-                Enter mileage:
-                <input
-                className="inputbox"
-                  type="text"
-                  name="mileage"
-                  value={formData.mileage}
-                  onChange={this.handleChange}
-                  placeholder="Engine Mileage of your car"
-                ></input>
-              </label>
-            </div>
-          </div>
-          <div className="submit-fields">
-            <button
-              className="btn-global"
-              disabled={isLoading}
-              onClick={!isLoading ? this.handlePredictClick : null}
-            >
-              {isLoading ? "Making prediction" : "Predict Result"}
-            </button>
-
-            <button
-              className="btn-global"
-              disabled={isLoading}
-              onClick={this.handleCancelClick}
-            >
-              Reset Prediction
-            </button>
-          </div>
-          <div className="output-fields">
-            {result === "" ? null : (
-              <h5 className="result-text">{result}</h5>
-            )}
-          </div>
-        </div>
+  return (
+    <div className="Calculate-Container">
+      <div className="calculate-title">
+        <h1>CARBON FOOTPRINT CALCULATOR</h1>
       </div>
-    );
-  }
+      <div className="input-container">
+        <div className="input-container-row-1">
+          {/* COMPANY */}
+          <div>
+            <label htmlFor="Make">Company:</label>
+            <select
+              className="inputfield"
+              name="Make"
+              placeholder="Select Company..."
+              onChange={handleChange}
+            >
+              <option value="">Company of your car...</option>
+              {companies.map((company) => (
+                <option value={company}>{company}</option>
+              ))}
+            </select>
+          </div>
+          <br></br>
+
+          {/* MODEL*/}
+          <div>
+            <label htmlFor="Model">Model:</label>
+            <select
+              className="inputfield"
+              name="Model"
+              placeholder="Select Model..."
+              onChange={handleChange}
+            >
+              <option value="">Model of your car...</option>
+              {models.map((model) => (
+                <option value={model}>{model}</option>
+              ))}
+            </select>
+          </div>
+          <br></br>
+
+          {/* VEHICLE CALSS */}
+          <div>
+            <label htmlFor="Class">Class:</label>
+            <select
+              className="inputfield"
+              name="Class"
+              placeholder="Select Vehicle-Class..."
+              onChange={handleChange}
+            >
+              <option value="">Vehicle-Class of your car...</option>
+              {vehicleclasses.map((vehicleclass) => (
+                <option value={vehicleclass}>{vehicleclass}</option>
+              ))}
+            </select>
+          </div>
+          <br></br>
+
+          {/* ENGINE SIZE */}
+          <div>
+            <label className="inputfield" htmlFor="Engine_Size">
+              Enter Engine Size:
+              <input
+                name="Engine_Size"
+                onChange={handleChange}
+                placeholder="Engine size of your car"
+              ></input>
+            </label>
+          </div>
+        </div>
+
+        <br></br>
+        <div className="input-container-row-2">
+          {/* TRANSMISSION */}
+          <div>
+            <label htmlFor="Transmission">Transmission:</label>
+            <select
+              className="inputfield"
+              name="Transmission"
+              placeholder="Select Transmission of your car..."
+              onChange={handleChange}
+            >
+              <option value="">Transmission of your car...</option>
+              {transmissions.map((transmission) => (
+                <option value={transmission}>{transmission}</option>
+              ))}
+            </select>
+          </div>
+          <br></br>
+          {/* FUEL TYPE */}
+          <div>
+            <label htmlFor="Fuel_Type">Fuel Type:</label>
+            <select
+              className="inputfield"
+              name="Fuel_Type"
+              placeholder="Select Fuel Type of your car..."
+              onChange={handleChange}
+            >
+              <option value="">Fuel Type of your car...</option>
+              {fueltypes.map((fueltype) => (
+                <option value={fueltype}>{fueltype}</option>
+              ))}
+            </select>
+          </div>
+          <br></br>
+
+          {/* MILEAGE */}
+          <div>
+            <label className="inputfield" htmlFor="Mileage_KmpL">
+              Mileage in Km/L:
+            </label>
+            <input
+              onChange={handleChange}
+              name="Mileage_KmpL"
+              type="text"
+              placeholder="Average kilometers per litres)..."
+            ></input>
+          </div>
+        </div>
+        {/* FINAL SUBMIT BUTTON  */}
+
+        <div className="submit-fields">
+          <button
+            className="btn-global"
+            disabled={isLoading}
+            onClick={!isLoading ? handlePredictClick : null}
+          >
+          {isLoading ? "Making prediction" : "Predict Result"}
+          </button>
+
+          <button
+            className="btn-global"
+            disabled={isLoading}
+            onClick={handleCancelClick}
+          >
+            Reset Prediction
+          </button>
+        </div>
+        <div className="output-fields">
+          {result === "" ? null : (
+            // console.log(result)
+            <h5 className="result-text">{result-200}</h5>
+          )}
+        </div>
+
+      </div>
+    </div>
+  );
 }
 
 export default Calculate;
