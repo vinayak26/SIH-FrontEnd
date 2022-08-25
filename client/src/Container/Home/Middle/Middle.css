@@ -1,43 +1,43 @@
 html {
   font-size: 62.5%;
+  font-weight: 100;
 }
 
 h1 {
   font-family: "Rubik", sans-serif;
   font-size: 3rem;
   padding: 1rem 2rem;
-  color: #ffffff;
 }
 p {
-  color: #ffffff;
+  color: #000000;
 }
 .Title-logo {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 .Title-Container {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   height: 25rem;
-  padding-top: 8rem;
+  padding-top: 1rem;
 }
 .Title {
   width: 100%;
   text-align: center;
 }
 .Title-logo {
-  color: #ffffff;
+  color: #000000;
 }
 .year {
-  color: #ffffff;
+  color: #3240e4;
 }
 .smart {
-  color: #e78309;
+  color: orange;
 }
 .india {
-  color: #ffffff;
+  color: #3240e4;
 }
 .hack {
-  color: #01a33a;
+  color: green;
 }
 .crb-logo {
   text-align: center;
