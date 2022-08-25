@@ -72,7 +72,7 @@ class Tracking extends Component {
           <div className="input-container-row-1">
             <div>
               <label className="inputfield">
-                Enter Engine Size:
+                Current Location:
                 <input
                   className="inputbox"
                   type="text"
@@ -87,7 +87,7 @@ class Tracking extends Component {
           <div className="input-container-row-2">
             <div>
               <label className="inputfield">
-                Enter mileage:
+                Target Location:
                 <input
                 className="inputbox"
                   type="text"

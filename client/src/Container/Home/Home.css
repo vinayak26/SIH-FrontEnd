@@ -1,5 +1,5 @@
 .home-container {
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: 100vh;
     background-image: url("../Home/Calculate.png");
     background-size: cover;

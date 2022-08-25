@@ -14,12 +14,12 @@ p {
 .Title-logo {
   font-size: 5rem;
 }
-.Title-Container {
+ .Title-Container {
   /* display: flex; */
   flex-direction: column;
   height: 25rem;
   padding-top: 1rem;
-}
+} 
 .Title {
   width: 100%;
   text-align: center;
@@ -60,22 +60,30 @@ p {
 }
 
 .btn-global {
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
+  background: #6f747d;
+  background-image: -webkit-linear-gradient(top, #6f747d, #6f747d);
+  background-image: -moz-linear-gradient(top, #6f747d, #6f747d);
+  background-image: -ms-linear-gradient(top, #6f747d, #6f747d);
+  background-image: -o-linear-gradient(top, #6f747d, #6f747d);
+  background-image: linear-gradient(to bottom, #6f747d, #6f747d);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 1rem;
   font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #444e4f;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  /* border-radius: 1rem; */
+  color: #030f18;
+  font-size: 1.8rem;
   padding: 1rem 2rem 1rem 2rem;
+  text-decoration: none;
   margin: 5rem 5rem;
 }
 
 .btn-global:hover {
-  background: #303738;
+  background: #414449;
+  background-image: -webkit-linear-gradient(top, #414449, #414449);
+  background-image: -moz-linear-gradient(top, #414449, #414449);
+  background-image: -ms-linear-gradient(top, #414449, #414449);
+  background-image: -o-linear-gradient(top, #414449, #414449);
+  background-image: linear-gradient(to bottom, #414449, #414449);
   text-decoration: none;
 }
 
