@@ -1,60 +1,47 @@
 //import React, { Component } from 'react';
 import { faBreadSlice } from '@fortawesome/free-solid-svg-icons';
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom/client';
-//import ScrollService from "../../utilities/ScrollService";
+import {breads} from "./Fooddata"
 
 
 function Foodcalc(){
-    const[amount, setAmount] = useState("");
 
-    const handleChange = (event) => {
-        const value = event.target.value;
-        const name = event.target.name;
-        var formData = this.state.formData;
-        formData[name] = value;
-        this.setState({
-          formData,
-        });
-    };
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        alert(`The amount you entered was: ${amount}`);
-    }
-    
-    return(
-        <>
-        <h1 align = "center">Food Carbon Footprint Calculator</h1>
-        <div align = "center">
-            <label>Bread</label>
-            <select
-                placeholder="Select Bread..."
-                onChange={handleChange}
-            >
-            {
-                [<option value={"Chapati"}>
-                Chapati
-                </option>,
-                <option value={"Bread"}>
-                Bread
-                </option>,
-                <option value={"Paratha"}>
-                Paratha
-                </option>]
-            }
+const handleonclick = () => {
+let finalvalues = [
+    bread
+]
+console.log(finalvalues)
 
-            </select>
-            <form onSubmit={handleSubmit}>
-                <label>Enter Amount Consumed :
-                    <input
-                    type="text"
-                    value={amount}
-                    />
-                    <input type="submit"/>
-                </label>
-            </form>
+}
+
+// Hooks for food
+
+const handleonBreadchange = (event) => {
+    Setbread(event.target.value);  
+}
+
+const[bread,Setbread] = useState();
+
+
+return(
+    <>
+    <h1 align = "center">Food Carbon Footprint Calculator</h1>
+    <div align = "center">
+        <label>Bread</label>
+        <select              
+            onChange={handleonBreadchange}
+            placeholder='Select Bread ..'
+        >
+            <option value="">Select Bread Category</option>
+            {breads.map((bread) =>(
+                <option value={bread}>{bread}</option>
+            ))}
+        </select>
+        <div className=''>
+            <button onClick={handleonclick}>Submit</button>
         </div>
-        </>
-    );
+    </div>
+    </>
+);
 }
 export default Foodcalc;
