@@ -2,6 +2,7 @@ import Home from "../Container/Home/Home";
 import Calculate from "../Container/Calculate/Calculate";
 // import Tracking from "../Container/Tracking/Tracking";
 import DataVisual from "../Container/DataVisual/DataVisual";
+import Foodcalc from "../Container/Foodcalc/Foodcalc";
 // import AboutUs from "../Container/AboutUs/AboutUs";
 
 
@@ -14,6 +15,10 @@ export const TOTAL_SCREENS = [
       screen_name: "Calculate",
       component: Calculate,  
     },
+    {
+      screen_name: "Foodcalc",
+      component: Foodcalc,  
+    },
     // {
     //   screen_name: "Tracking",
     //   component: Tracking,  
@@ -22,6 +27,7 @@ export const TOTAL_SCREENS = [
       screen_name: "DataVisual",
       component: DataVisual,  
     },
+
     
     // {  screen_name: "AboutUs",
     //   component: AboutUs,  
