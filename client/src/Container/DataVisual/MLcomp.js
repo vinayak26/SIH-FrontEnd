@@ -98,23 +98,23 @@ export default function MLcomp() {
 }
 
 const Text = styled.div`
-  padding: 2rem 0 0 50rem;
-  padding: 80px 0 0 0;
+  
+  padding: 80px 0 0 0; 
   background-color: #52686a;
-  height: 80px;
-  text-align:right;
+  text-align:center;
 `;
 
 const GraphBlock = styled.div`
-  margin: auto;
+  margin: 1px;
   // height: 100%;
   // width: 100%;
-  // padding: 5rem 0 0 40rem;
-  padding-top:10rem;
+  // padding: 10rem 0 0 40rem;
+  padding-top:13rem;
 `;
 const Container = styled.div`
 display:flex;
   background-color: #52686a;
   height: 100vh;
   width: 100%;
+  
 `;
