@@ -8,8 +8,10 @@ cd services </br>
 pip install -r requirements.txt </br>
 flask run </br>
 
-#Screenshots
+# Screenshots
 <img src="https://github.com/vinayak26/SIH-FrontEnd/blob/main/client/public/Capture.PNG" alt="GitHub Logo">
+<img src="https://github.com/vinayak26/SIH-FrontEnd/blob/main/client/public/Capture1.PNG" alt="GitHub Logo">
+<img src="https://github.com/vinayak26/SIH-FrontEnd/blob/main/client/public/Capture3.PNG" alt="GitHub Logo">
 
 
 # Note:
